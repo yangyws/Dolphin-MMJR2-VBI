@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Title of the app -->
+    <string name="app_name">Dolphin |MMJR2|</string>
+    <string name="host">app</string>
+    <string name="scheme">dolphinemu</string>
+
+    <string name="controller_0">GameCube 控制器 1</string>
+    <string name="controller_1">GameCube 控制器 2</string>
+    <string name="controller_2">GameCube 控制器 3</string>
+    <string name="controller_3">GameCube 控制器 4</string>
+
+    <string name="controller_control">控制搖桿</string>
+    <string name="controller_c">C 搖桿</string>
+    <string name="controller_trig">板機鍵</string>
+    <string name="controller_dpad">方向鍵</string>
+    <string name="modifier_range">微調範圍</string>
+    <string name="analog_radius">類比半徑 (數值越高 = 靈敏度越高)</string>
+    <string name="analog_threshold">類比閥值 (數值越低 = 靈敏度越高)</string>
+
+    <string name="wiimote_4">Wii 遙控器 1</string>
+    <string name="wiimote_5">Wii 遙控器 2</string>
+    <string name="wiimote_6">Wii 遙控器 3</string>
+    <string name="wiimote_7">Wii 遙控器 4</string>
+
+    <string name="wiimote_extension_4">Wii 遙控器擴充裝置 1</string>
+    <string name="wiimote_extension_5">Wii 遙控器擴充裝置 2</string>
+    <string name="wiimote_extension_6">Wii 遙控器擴充裝置 3</string>
+    <string name="wiimote_extension_7">Wii 遙控器擴充裝置 4</string>
+
+    <string name="wiimote_extensions">擴充裝置</string>
+    <string name="wiimote_extensions_description">選擇並綁定 Wii 遙控器擴充裝置。</string>
+    <string name="wiimote_ir">紅外線 (IR)</string>
+    <string name="wiimote_swing">揮動 (Swing)</string>
+    <string name="wiimote_tilt">傾斜 (Tilt)</string>
+    <string name="wiimote_shake">搖晃 (Shake)</string>
+
+    <string name="input_binding">輸入按鍵綁定</string>
+    <string name="input_binding_description">按下或移動按鍵以將其綁定至 %1$s。</string>
+    <string name="input_rumble_description">按下或移動任一按鍵以設定震動。</string>
+
+    <!-- Generic buttons (Shared with lots of stuff) -->
+    <string name="generic_buttons">按鈕</string>
+    <string name="generic_up">上</string>
+    <string name="generic_down">下</string>
+    <string name="generic_left">左</string>
+    <string name="generic_right">右</string>
+    <string name="generic_forward">向前</string>
+    <string name="generic_backward">向後</string>
+    <string name="generic_stick">搖桿</string>
+    <string name="generic_green">綠</string>
+    <string name="generic_red">紅</string>
+    <string name="generic_yellow">黃</string>
+    <string name="generic_blue">藍</string>
+    <string name="generic_orange">橘</string>
+
+    <!-- GameCube buttons (May be shared with other stuff too) -->
+    <string name="button_a">A</string>
+    <string name="button_b">B</string>
+    <string name="button_start">START</string>
+    <string name="button_x">X</string>
+    <string name="button_y">Y</string>
+    <string name="button_z">Z</string>
+    <string name="trigger_left">L</string>
+    <string name="trigger_right">R</string>
+    <string name="trigger_left_analog">L 類比</string>
+    <string name="trigger_right_analog">R 類比</string>
+
+    <!-- Wii Remote buttons (May be shared with other stuff too) -->
+    <string name="button_one">1</string>
+    <string name="button_two">2</string>
+    <string name="button_minus">-</string>
+    <string name="button_plus">+</string>
+    <string name="button_home">HOME</string>
+    <string name="ir_hide">隱藏</string>
+    <string name="tilt_modifier">微調修飾鍵</string>
+    <string name="shake_x">X</string>
+    <string name="shake_y">Y</string>
+    <string name="shake_z">Z</string>
+
+    <!-- Nunchuk only buttons -->
+    <string name="nunchuk_button_c">C</string>
+
+    <!-- Classic only buttons -->
+    <string name="classic_button_zl">ZL</string>
+    <string name="classic_button_zr">ZR</string>
+    <string name="classic_leftstick">左搖桿</string>
+    <string name="classic_rightstick">右搖桿</string>
+
+    <!-- Guitar only buttons -->
+    <string name="guitar_frets">品位按鍵 (Frets)</string>
+    <string name="guitar_strum">彈奏撥片 (Strum)</string>
+    <string name="guitar_whammy">顫音 (Whammy)</string>
+    <string name="guitar_whammy_bar">顫音搖桿 (Bar)</string>
+
+    <!-- Drums only buttons -->
+    <string name="drums_pads">鼓面 (Pads)</string>
+    <string name="drums_pad_bass">低音鼓 (Bass)</string>
+
+    <!-- Turntable only buttons -->
+    <string name="turntable_button_green_left">左綠</string>
+    <string name="turntable_button_red_left">左紅</string>
+    <string name="turntable_button_blue_left">左藍</string>
+    <string name="turntable_button_green_right">右綠</string>
+    <string name="turntable_button_red_right">右紅</string>
+    <string name="turntable_button_blue_right">右藍</string>
+    <string name="turntable_button_euphoria">狂熱 (Euphoria)</string>
+    <string name="turntable_table_left">左轉盤</string>
+    <string name="turntable_table_right">右轉盤</string>
+    <string name="turntable_effect">效果</string>
+    <string name="turntable_effect_dial">效果旋鈕</string>
+    <string name="turntable_crossfade">交叉混音淡化 (Crossfade)</string>
+
+    <!-- Main Preference Fragment -->
+    <string name="settings">設定</string>
+    <string name="game_settings">遊戲設定：%1$s</string>
+    <string name="config">配置</string>
+    <string name="graphics_settings">繪圖設定</string>
+    <string name="gcpad_settings">GameCube 輸入設定</string>
+    <string name="wiimote_settings">Wii 輸入設定</string>
+    <string name="settings_saved">已將設定儲存至 INI 檔案</string>
+    <string name="settings_saved_game_specific">已儲存 %1$s 的專屬設定</string>
+
+    <!-- General Preference Fragment -->
+    <string name="general_submenu">一般</string>
+    <string name="dual_core">雙核心 (Dual Core)</string>
+    <string name="dual_core_description">將工作負載分攤至兩個 CPU 核心，能大幅提升執行速度。</string>
+    <string name="enable_cheats">啟用金手指作弊碼</string>
+    <string name="speed_limit" formatted="false">速度限制 (0% = 不限制)</string>
+    <string name="skip_on_skip_idle">在略過閒置黑客中同步 GPU</string>
+    <string name="skip_on_skip_idle_description">在略過閒置週期時同步模擬 CPU 與 GPU。停用此選項大致安全，但由於 CPU 與 GPU 未完全同步，可能導致異常或當機。為避免音訊爆音，請務必停用「音訊拉伸」。</string>
+    <string name="jit_follow_branch">JIT 分支跟隨 (JIT Follow Branch)</string>
+    <string name="jit_follow_branch_description">允許模擬 CPU 跟隨特定分支指令。停用此選項大致安全，但有時可能引發異常或崩潰。</string>
+    <string name="overclock_warning" formatted="false">警告：變更預設時脈 (100%) 可能導致遊戲異常或錯誤。請勿在非預設時脈下回報遊戲 Bug。</string>
+    <string name="gamecube_submenu">GameCube</string>
+    <string name="system_language">系統語言</string>
+    <string name="skip_ipl">略過 IPL</string>
+    <string name="skip_ipl_description">略過 BIOS 開機畫面。\n若取消勾選，必須在 /mmjr2-vbi/GC/REGION/ 目錄放置對應區域的 ipl.bin 檔案。\n若缺少正確 BIOS，應用程式可能因尚未修復的錯誤而當機。</string>
+    <string name="slot_a_device">GameCube 插槽 A 裝置</string>
+    <string name="slot_b_device">GameCube 插槽 B 裝置</string>
+	<string name="serial_port_1_device">GameCube 序列埠 1 裝置</string>
+    <string name="wii_submenu">Wii</string>
+    <string name="wii_misc_settings">其他雜項設定</string>
+    <string name="wii_sd_card_settings">SD 卡設定</string>
+    <string name="wii_wiimote_settings">Wii 遙控器設定</string>
+    <string name="wii_widescreen">寬螢幕支援 (16:9)</string>
+    <string name="wii_widescreen_description">在支援的遊戲中將顯示比例從 4:3 切換為 16:9。</string>
+    <string name="wii_pal60">使用 PAL60 模式 (EuRGB60)</string>
+    <string name="wii_pal60_description">在支援的 PAL 遊戲中將更新率從 50 Hz 切換為 60 Hz。</string>
+    <string name="wii_screensaver">啟用螢幕保護程式</string>
+    <string name="wii_screensaver_description">閒置五分鐘後自動將螢幕調暗。</string>
+    <string name="wii_enable_wiilink">透過 WiiLink 啟用 WiiConnect24</string>
+    <string name="wii_enable_wiilink_description">為 WiiConnect24 頻道啟用 WiiLink 服務。請參閱使用條款：https://www.wiilink24.com/tos</string>
+    <string name="sound_mode">聲音輸出模式</string>
+    <string name="insert_sd_card">插入虛擬 SD 卡</string>
+    <string name="insert_sd_card_description">支援 SD 與 SDHC。預設容量為 128 MB。</string>
+    <string name="wii_sd_card_allow_writes">允許寫入 SD 卡</string>
+    <string name="wii_sd_card_sync">自動與資料夾同步</string>
+    <string name="wii_sd_card_sync_description">在開始與結束模擬時，自動將 SD 卡內容與 SD 同步資料夾同步。</string>
+    <string name="wii_sd_card_path">SD 卡檔案路徑</string>
+    <string name="wii_sd_sync_folder">SD 同步資料夾</string>
+    <string name="wii_sd_card_folder_to_file">立即將資料夾轉換為 SD 卡檔案</string>
+    <string name="wii_sd_card_folder_to_file_confirmation">您即將把 SD 同步資料夾內容轉換為 SD 卡鏡像檔，檔案中現有內容將全數被覆蓋。確定要繼續嗎？</string>
+    <string name="wii_sd_card_file_to_folder">立即將 SD 卡檔案轉換為資料夾</string>
+    <string name="wii_sd_card_file_to_folder_confirmation">您即將把 SD 卡鏡像檔內容解壓縮至 SD 同步資料夾，資料夾中現有內容將全數被覆蓋。確定要繼續嗎？</string>
+    <string name="wii_converting">正在轉換...</string>
+    <string name="wii_convert_success">轉換完成。</string>
+    <string name="wii_convert_failure">轉換失敗。</string>
+    <string name="wiimote_rumble">Wii 遙控器震動</string>
+    <string name="wiimote_volume">Wii 遙控器喇叭音量</string>
+    <string name="sensor_bar_sensitivity">感應條靈敏度</string>
+    <string name="sensor_bar_position">感應條位置</string>
+    <string name="wiimote_scanning">Wii 遙控器持續掃描</string>
+    <string name="wiimote_scanning_description">若搭配 DolphinBar 使用實體 Wii 遙控器，請保持此設定開啟。</string>
+    <string name="wiimote_speaker">Wii 遙控器喇叭聲音</string>
+    <string name="wiimote_speaker_description">透過實體 Wii 遙控器喇叭輸出聲音（需搭配 DolphinBar）。</string>
+    <string name="override_region_settings">允許區域設定不符</string>
+    <string name="auto_disc_change">自動切換光碟</string>
+    <string name="fallback_region">後備退回區域</string>
+    <string name="enable_save_states">啟用即時存檔</string>
+    <string name="enable_save_states_description">警告：即時存檔可能與未來版本的 Dolphin 不相容，且有時可能導致無法正常儲存遊戲存檔。請勿將即時存檔作為儲存進度的唯一方式。</string>
+    <string name="analytics">啟用使用統計數據回報</string>
+    <string name="analytics_desc">經由您的授權，Dolphin 可收集效能表現、功能使用情形、配置設定，以及您的系統硬體與作業系統資訊。\n\n絕不會收集任何個人隱私資料。這些數據有助於我們了解玩家如何使用 Dolphin 並排定開發優先順序，同時協助診斷罕見的硬體相容性問題。此授權可隨時於設定中撤銷。</string>
+    <string name="analytics_new_id">產生新的統計識別碼</string>
+    <string name="analytics_new_id_confirmation">確定要產生新的統計識別碼嗎？</string>
+    <string name="dev">Dolphin MMJR2 VBI 由 Medard22 開發維護 – 基於 Dolphin 2407-1</string>
+    <string name="dev_thanks">特別感謝 Dolphin Team、Weihuoya (偉哥)、bankaimaster999、sspacelynx 以及 Lumince。</string>
+    <string name="about">\u00A9 2003–2025 Dolphin Team &amp; Medard22</string>
+
+    <!-- SerialPort1 Subsetting Fragment -->
+    <string name="serialport1_submenu">序列埠 1 (Serial Port 1)</string>
+    <string name="xlink_kai_guide_header">詳細設定說明請<a href="https://www.teamxlink.co.uk/wiki/Dolphin">參考此頁面。</a></string>
+    <string name="xlink_kai_bba_ip">XLink Kai IP 位址 / 主機名稱</string>
+    <string name="xlink_kai_bba_ip_description">執行 XLink Kai 用戶端之裝置的 IP 位址或主機名稱</string>
+    <string name="bba_tapserver_destination">Tapserver 目標位址</string>
+    <string name="bba_tapserver_destination_description">輸入 tapserver 實例的通訊端 (Socket) 路徑或網路位置 (位址:連接埠)</string>
+    <string name="modem_tapserver_destination">Tapserver 目標位址</string>
+    <string name="modem_tapserver_destination_description">輸入 tapserver 實例的通訊端 (Socket) 路徑或網路位置 (位址:連接埠)</string>
+    <string name="bba_builtin_dns">DNS 伺服器</string>
+    <string name="bba_builtin_dns_description">一般 DNS 使用 8.8.8.8，或輸入您的自訂伺服器位址</string>
+
+    <!-- Interface Preference Fragment -->
+    <string name="interface_submenu">使用者介面</string>
+    <string name="emulation_screen_orientation">模擬執行時螢幕方向</string>
+    <string name="expand_to_cutout_area">延伸畫面至螢幕挖孔/瀏海區域</string>
+    <string name="expand_to_cutout_area_description">將顯示畫面延伸填滿包含相機挖孔（瀏海）的整個螢幕區域。</string>
+    <string name="panic_handlers">啟用恐慌錯誤提示處理器 (Panic Handlers)</string>
+    <string name="panic_handlers_description">當發生潛在嚴重錯誤時彈出提示視窗。停用可避免不致命的惱人彈窗，但若遇重大崩潰將無法看到原因。</string>
+    <string name="osd_messages">顯示螢幕 OSD 提示訊息</string>
+    <string name="osd_messages_description">在模擬畫面覆蓋顯示提示訊息（包含記憶卡寫入、視訊後端與 CPU 資訊，以及 JIT 快取清除等）。</string>
+    <string name="download_game_covers">從 GameTDB.com 自動下載遊戲封面</string>
+    <string name="application_theme">介面佈景主題</string>
+    <string name="updater_check_startup">啟動時檢查更新</string>
+    <string name="updater_check_startup_description">若允許，Dolphin |MMJR2| 將在啟動時檢查新版本。有可用新版時會彈窗提示（需網路連線）。</string>
+
+    <!-- Online Update Region Select Fragment -->
+    <string name="region_select_title">請選擇所在區域</string>
+    <string name="europe">歐洲 (Europe)</string>
+    <string name="japan">日本 (Japan)</string>
+    <string name="korea">韓國 (Korea)</string>
+    <string name="united_states">美國 (United States)</string>
+
+    <!-- Online Update Progress Bar Fragment -->
+    <string name="updating">更新中</string>
+    <string name="updating_message">正在更新標題 %016x...\n這可能需要一段時間。</string>
+    <string name="update_success">模擬的 Wii 主機系統已更新完成。</string>
+    <string name="already_up_to_date">模擬的 Wii 主機系統已經是最新版本。</string>
+    <string name="region_mismatch">遊戲光碟區域與您的主機區域不符。為避免系統選單出錯，無法使用此光碟更新模擬主機。</string>
+    <string name="missing_update_partition">此遊戲光碟未包含可用的更新資料分割區。</string>
+    <string name="disc_read_failed">無法讀取光碟更新資料。</string>
+    <string name="server_failed">無法從任天堂伺服器下載更新資訊。請檢查您的網路連線後再試一次。</string>
+    <string name="download_failed">無法從任天堂伺服器下載更新檔案。請檢查您的網路連線後再試一次。</string>
+    <string name="import_failed">無法安裝更新至 Wii 系統記憶體。請參閱記錄檔以取得更多資訊。</string>
+    <string name="update_cancelled">更新已取消。強烈建議完成更新以避免系統版本不一致。</string>
+    <string name="update_cancelling">正在取消更新，請稍候...</string>
+    <string name="update_success_title">更新完成</string>
+    <string name="update_failed_title">更新失敗</string>
+    <string name="update_cancelled_title">更新已取消</string>
+
+    <!-- Audio Settings -->
+    <string name="audio_submenu">音效設定</string>
+    <string name="dsp_emulation_engine">DSP 模擬引擎</string>
+    <string name="audio_stretch">音訊時間拉伸 (Audio Stretching)</string>
+    <string name="audio_stretch_description">透過時間拉伸減少卡頓與爆音，但會略微增加音訊延遲。</string>
+    <string name="audio_volume">音效音量</string>
+
+    <!-- Path Settings -->
+    <string name="paths_submenu">檔案路徑</string>
+    <string name="search_subfolders">遞迴搜尋子資料夾中的遊戲檔案</string>
+    <string name="default_ISO">預設遊戲光碟 (ISO)</string>
+    <string name="wii_NAND_root">Wii NAND 根目錄</string>
+    <string name="dump_path">傾印輸出路徑 (Dump Path)</string>
+    <string name="load_path">自訂載入路徑 (Load Path)</string>
+    <string name="resource_pack_path">資源套件路徑 (Resource Pack Path)</string>
+    <string name="SD_card_path">SD 卡鏡像路徑</string>
+	<string name="wfs_path">WFS 路徑</string>
+
+    <!-- Graphics Settings -->
+    <string name="graphics_general">繪圖設定</string>
+    <string name="graphics_enhancements_and_hacks">增強與黑客提速設定</string>
+
+    <!-- Video Preference Fragment -->
+    <string name="video_backend">視訊算繪後端 API</string>
+    <string name="video_backend_description">選取用於圖形繪圖算繪的底層 API (如 Vulkan 或 OpenGL)。</string>
+    <string name="show_fps">顯示畫面幀率 (FPS)</string>
+    <string name="show_fps_description">顯示每秒算繪的獨立畫面格數，衡量視覺流暢度。</string>
+    <string name="show_ftimes">顯示幀生成時間 (Frame Times)</string>
+    <string name="show_ftimes_description">顯示相鄰畫面幀之間的平均毫秒時間與標準差。</string>
+    <string name="show_vps">顯示每秒場次 (VPS)</string>
+    <string name="show_vps_description">顯示每秒算繪場數，作為模擬運算速度的衡量指標。</string>
+    <string name="show_vtimes">顯示垂直更新間隔時間 (VBlank Times)</string>
+    <string name="show_vtimes_description">顯示每個算繪場之間的平均毫秒時間與標準差。</string>
+    <string name="show_graphs">顯示效能圖表</string>
+    <string name="show_graphs_description">在畫面上即時繪製幀時間圖表與統計資訊，呈現模擬效能波動。</string>
+    <string name="show_speed" formatted="false">顯示模擬速度百分比 (%)</string>
+    <string name="show_speed_description">顯示相對於原機全速的模擬執行速度百分比。</string>
+    <string name="show_speed_colors">依速度切換顏色</string>
+    <string name="show_speed_colors_description">根據模擬速度快慢動態改變 FPS 計數器的顏色。</string>
+    <string name="enhancements_submenu">畫面增強</string>
+    <string name="internal_resolution">內部算繪解析度</string>
+    <string name="internal_resolution_description">指定 3D 算繪的內部解析度。高解析度能極大幅度提升畫質細緻度，但對硬體 GPU 負載較大，少數遊戲可能出現畫面瑕疵。</string>
+    <string name="FSAA">全景反鋸齒 (FSAA)</string>
+    <string name="FSAA_description">平滑消除 3D 物件邊緣的鋸齒狀線條，使畫面更加柔順。此功能會顯著降低運算速度並在部分遊戲引發異常。</string>
+    <string name="anisotropic_filtering">非等方性紋理過濾 (Anisotropic Filtering)</string>
+    <string name="anisotropic_filtering_description">增強傾斜視角下遠景材質紋理的清晰度。極少數遊戲可能會有些微瑕疵。</string>
+    <string name="texture_filtering">紋理過濾模式</string>
+    <string name="texture_filtering_description">覆蓋遊戲自訂的紋理縮放濾鏡。除「預設」外之選項可能改變材質外觀。</string>
+    <string name="post_processing_shader">後製處理特效 (Post-Processing)</string>
+    <string name="post_processing_shader_description">在畫面算繪完成後套用後製著色特效。</string>
+    <string name="postprocessing_shader">後製處理著色器</string>
+    <string name="postprocessing_shader_description">在單一畫面完成後套用指定的後製著色器效果。</string>
+    <string name="scaled_efb_copy">依解析度縮放 EFB 複本 (Scaled EFB Copy)</string>
+    <string name="scaled_efb_copy_description">大幅提升使用「算繪至紋理」技術之畫面材質品質。提升內部解析度可增強此效果。極輕微影響效能。</string>
+    <string name="per_pixel_lighting">逐像素光照 (Per-Pixel Lighting)</string>
+    <string name="per_pixel_lighting_description">以逐像素方式計算 3D 光影而非頂點光照，提供更平滑逼真的光澤。通常安全但會增加少許 GPU 負載。</string>
+    <string name="force_texture_filtering">強制紋理過濾</string>
+    <string name="force_texture_filtering_description">即使遊戲明示停用仍強制進行紋理過濾。可稍微提升畫質，但可能在某些遊戲產生畫面瑕疵。</string>
+    <string name="force_24bit_color">強制 24 位元色彩</string>
+    <string name="force_24bit_color_description">強制將 RGB 色彩通道以 24 位元算繪，消除色階斷層與色帶現象。不影響效能且極少出錯，建議保持開啟。</string>
+    <string name="disable_fog">停用霧氣效果</string>
+    <string name="disable_fog_description">移除畫面霧氣以提高遠景清晰度與細節。依賴正確霧氣模擬的遊戲畫面可能會出現異常。</string>
+    <string name="disable_copy_filter">停用複製濾鏡 (Anti-Flicker)</string>
+    <string name="disable_copy_filter_description">在複製 EFB 時停用相鄰行混合濾鏡（即抗閃爍消除濾鏡）。停用通常安全且能帶來更銳利的畫面影像。</string>
+    <string name="arbitrary_mipmap_detection">任意 Mipmap 偵測</string>
+    <string name="arbitrary_mipmap_detection_description">啟用對遊戲自訂距離 Mipmap 紋理的偵測機制。在高解析度下可能誤判導致模糊，若不確定請保持取消勾選。</string>
+    <string name="color_correction_submenu">色彩校正</string>
+    <string name="color_space">色彩空間 (Color Space)</string>
+    <string name="correct_color_space">校正色彩空間</string>
+    <string name="correct_color_space_description">將 GameCube/Wii 原生色彩空間正確轉換至現代螢幕標準之 sRGB/Rec.709。</string>
+    <string name="game_color_space">遊戲色彩空間標準</string>
+    <string name="ntscm_space">NTSC-M (SMPTE 170M)</string>
+    <string name="ntscj_space">NTSC-J (ARUB TR-89)</string>
+    <string name="pal_space">PAL (EBU)</string>
+    <string name="stereoscopy_submenu">立體 3D (Stereoscopy)</string>
+    <string name="stereoscopy_submenu_description">搭配支援之硬體（如 3D 螢幕或 VR）體驗身歷其境的景深立體感。會大幅增加效能消耗。</string>
+    <string name="wide_screen_hack">寬螢幕黑客補丁 (Widescreen Hack)</string>
+    <string name="wide_screen_hack_description">強制遊戲以任意比例輸出畫面。建議配合「長寬比強制 16:9」將原 4:3 遊戲延展為 16:9 寬螢幕。若已使用 Gecko/AR 寬螢幕代碼請勿開啟此選項。</string>
+    <string name="stereoscopy_mode">立體 3D 模式</string>
+    <string name="stereoscopy_mode_description">選擇立體 3D 顯示模式（如左右並排、紅藍立體等）。</string>
+    <string name="stereoscopy_depth">立體景深 (Depth)</string>
+    <string name="stereoscopy_depth_description">調整雙眼虛擬攝影機之間的間距。數值越高立體深度感越強烈，較低數值觀看更為舒適。</string>
+    <string name="stereoscopy_convergence">聚焦匯聚點 (Convergence)</string>
+    <string name="stereoscopy_convergence_description">控制立體聚合平面距離，決定物體躍出螢幕的距離感。</string>
+    <string name="stereoscopy_swap_eyes">左右眼視角對調</string>
+    <string name="stereoscopy_swap_eyes_description">交換左眼與右眼的成像畫面，適用於交叉鬥雞眼檢視方式。</string>
+    <string name="manual_texture_sampling">手動紋理取樣 (Manual Texture Sampling)</string>
+    <string name="manual_texture_sampling_description">使用手動演算法實作紋理取樣，而非依賴繪圖後端內建功能。</string>
+
+    <string name="hacks_submenu">黑客效能提速設定 (Hacks)</string>
+    <string name="embedded_frame_buffer">嵌入式幀緩衝區 (EFB)</string>
+    <string name="skip_efb_access">略過 CPU 存取 EFB</string>
+    <string name="skip_efb_access_description">略過所有來自 CPU 讀寫 EFB 的請求。大幅提升遊戲流暢度，但少數需要游標瞄準或特殊畫面讀取的遊戲可能會失效。</string>
+    <string name="ignore_format_changes">忽略格式變更</string>
+    <string name="ignore_format_changes_description">忽略任何對 EFB 格式進行的變更要求。</string>
+    <string name="efb_copy_method">僅將 EFB 複本儲存至紋理 (GPU)</string>
+    <string name="efb_copy_method_description">將 EFB 複本完全存放在 GPU 顯示記憶體中，不寫回系統記憶體。極少數遊戲可能出現貼圖異常，建議預設勾選。</string>
+    <string name="defer_efb_copies">延遲 EFB 複本寫回記憶體</string>
+    <string name="defer_efb_copies_description">等待遊戲與 GPU 同步後再將 EFB 內容寫回系統 RAM，可提升效能。若不確定請保持未勾選。</string>
+    <string name="texture_cache">紋理快取</string>
+    <string name="texture_cache_accuracy">紋理快取精確度 (Texture Cache Accuracy)</string>
+    <string name="texture_cache_accuracy_description">設定等級越高越安全，能避免模擬器遺漏記憶體中的紋理更新；設定為快速可提升速度。</string>
+    <string name="gpu_texture_decoding">GPU 紋理解碼</string>
+    <string name="gpu_texture_decoding_description">在支援的裝置上使用計算著色器由 GPU 解碼紋理，可在多數場景提升運算效能。</string>
+    <string name="external_frame_buffer">外部幀緩衝區 (XFB)</string>
+    <string name="xfb_copy_method">僅將 XFB 複本儲存至紋理 (GPU)</string>
+    <string name="xfb_copy_method_description">將 XFB 複本單獨存放在 GPU 顯存中。少數需要從記憶體讀回畫面的遊戲可能會出現畫面瑕疵，建議勾選。</string>
+    <string name="immediate_xfb">立即呈現 XFB (Immediate XFB)</string>
+    <string name="immediate_xfb_description">XFB 複本生成時立即呈現在螢幕上，無需等待掃描線輸出。能大幅降低輸入延遲，但在某些遊戲可能造成畫面撕裂。</string>
+    <string name="skip_duplicate_xfbs">略過呈現重複畫面幀</string>
+    <string name="skip_duplicate_xfbs_description">跳過重複未變更的畫面格，有助於低階設備提升流暢度，但可能使幀節奏略有不均。建議勾選。</string>
+    <string name="fast_depth_calculation">快速深度計算</string>
+    <string name="fast_depth_calculation_description">使用近似演算法計算深度值以提升運算速度。少數遊戲可能產生穿透錯誤，建議勾選。</string>
+    <string name="disable_bbox">停用邊界框 (Disable Bounding Box)</string>
+    <string name="disable_bbox_description">停用邊界框模擬以大幅降低 GPU 負擔。紙片瑪利歐等依賴 BBox 的遊戲需保持關閉，其餘遊戲建議勾選。</string>
+    <string name="vertex_rounding">頂點捨入 (Vertex Rounding)</string>
+    <string name="vertex_rounding_description">將 2D 頂點與視口尺寸捨入為整數像素。在高內部解析度下可修復部分遊戲的線條瑕疵，原機解析度下無效。</string>
+    <string name="vi_skip">VBI 跳幀加速 (VBI Skip)</string>
+    <string name="vi_skip_description" formatted="false">【MMJR2 核心特色】偵測到卡頓掉幀時自動跳過垂直消隱 (VI) 中斷，讓遊戲即使未達 100% 速度仍能保持音訊流暢不破音！可能造成少數遊戲凍結。</string>
+    <string name="texture_cache_to_state">將紋理快取儲存至即時存檔</string>
+    <string name="texture_cache_to_state_description">在即時存檔中包含 EFB 緩衝區與放大材質，能徹底解決讀取存檔時貼圖消失或模糊的問題，但會稍微增加存檔時間。</string>
+    <string name="fast_texture_sampling">快速紋理取樣</string>
+    <string name="fast_texture_sampling_description">使用圖形 API 原生硬體取樣功能，取代手動軟體取樣實作以增進效能。</string>
+    <string name="aspect_ratio">畫面顯示比例 (Aspect Ratio)</string>
+    <string name="aspect_ratio_description">設定算繪顯示時的畫面長寬比 (如 自動、4:3、16:9 或 強制填滿)。</string>
+    <string name="shader_compilation_mode">著色器編譯模式</string>
+    <string name="fast_disc_speed">加速光碟讀取速度</string>
+    <string name="fast_disc_speed_description">加速虛擬光碟機讀取速度以顯著縮短載入等待時間。依賴精確讀取時序的遊戲可能出現不穩定或當機。</string>
+    <string name="wait_for_shaders">啟動前預先編譯著色器</string>
+    <string name="wait_for_shaders_description">在遊戲啟動時先行編譯已知著色器，啟動時需稍候，但能大幅減輕進入遊戲初期的卡頓現象。</string>
+
+    <string name="advanced_graphics_submenu">進階繪圖設定</string>
+    <string name="gfx_mods_and_custom_textures">繪圖 Mod 補丁與高解析度材質</string>
+    <string name="gfx_mods">啟用繪圖 Mod 補丁</string>
+    <string name="gfx_mods_description">從 User/Load/GraphicsMods/ 目錄載入自訂圖形 Mod。</string>
+    <string name="load_custom_texture">載入自訂高畫質材質</string>
+    <string name="load_custom_texture_description">從 User/Load/Textures/&lt;game_id&gt;/ 與 DynamicInputTextures 載入高解析度材質包。</string>
+    <string name="cache_custom_texture">預先讀取材質至記憶體</string>
+    <string name="cache_custom_texture_description">啟動時將高解析度材質預載入至系統記憶體，可徹底解決動態讀取卡頓，但需消耗較多 RAM。</string>
+    <string name="dump_texture">傾印遊戲紋理 (Dump Textures)</string>
+    <string name="dump_texture_description">將解碼後的遊戲材質傾印匯出至 User/Dump/Textures/&lt;game_id&gt;/。非製作材質包請勿勾選。</string>
+    <string name="dump_base_texture">傾印基礎紋理</string>
+    <string name="dump_base_texture_description">是否將基礎遊戲材質傾印匯出至 Dump 目錄。</string>
+    <string name="dump_mip_texture">傾印 Mipmap 紋理</string>
+    <string name="dump_mip_texture_description">是否將 Mipmap 層級材質傾印匯出至 Dump 目錄。</string>
+    <string name="misc">其他</string>
+    <string name="crop">裁切畫面邊緣</string>
+    <string name="crop_description">將畫面裁切為標準 4:3 或 16:9 以消除黑邊。若不確定請保持未勾選。</string>
+    <string name="progressive_scan">啟用循序掃描 (Progressive Scan)</string>
+    <string name="backend_multithreading">後端多執行緒算繪 (Vulkan)</string>
+    <string name="backend_multithreading_description">啟用圖形後端的多執行緒算繪（僅限 Vulkan API），能有效發揮多核心效能，建議開啟。</string>
+    <string name="prefer_vs_for_point_line_expansion">優先使用頂點著色器擴展點/線</string>
+    <string name="prefer_vs_for_point_line_expansion_description">在同時支援幾何著色器與頂點著色器的後端中，選用頂點著色器執行點線擴展，可改善部分硬體效能。</string>
+    <string name="cpu_cull">在 CPU 上剔除視錐外頂點</string>
+    <string name="cpu_cull_description">由 CPU 事先剔除鏡頭外頂點以減少繪製呼叫 (Draw Calls)。若不確定請保持未勾選。</string>
+    <string name="defer_efb_invalidation">延遲 EFB 快取失效</string>
+    <string name="defer_efb_invalidation_description">延遲使 EFB 快取失效直至執行 GPU 同步指令，在部分遊戲中可提升效能但可能影響穩定性。</string>
+    <string name="internal_resolution_dumps">以內部解析度傾印畫面</string>
+    <string name="internal_resolution_dumps_description">以模擬算繪的內部高解析度擷取螢幕畫面，而非目前的視窗尺寸。</string>
+    <string name="debugging">除錯選項</string>
+//    <string name="wireframe">啟用線框</string>
+    <string name="show_stats">顯示統計資訊</string>
+//    <string name="texture_format">材質格式疊加顯示</string>
+    <string name="validation_layer">啟用 API 驗證層 (Validation Layers)</string>
+    <string name="dump_efb">傾印 EFB 目標</string>
+    <string name="dump_xfb">傾印 XFB 目標</string>
+    <string name="disable_vram_copies">停用 EFB 顯存複本</string>
+    <string name="leave_this_unchecked">若不確定，請保持未勾選。</string>
+
+    <!-- Advanced Settings -->
+    <string name="advanced_submenu">進階核心</string>
+    <string name="advanced_submenu2">進階設定</string>
+    <string name="cpu_core">CPU 核心模擬引擎</string>
+    <string name="mmu_enable">啟用 MMU 記憶體管理單元</string>
+    <string name="mmu_enable_description">啟用記憶體管理單元 (MMU)。少數遊戲（如星際大戰、薩爾達傳說黃昏公主）必須開啟才能進入遊戲，但會消耗較多效能。</string>
+    <string name="overclock_enable">自訂覆蓋模擬 CPU 時脈速度</string>
+    <string name="overclock_enable_description">調高時脈可使動態幀率遊戲運行在更高流暢度（需要強大的處理器）；調低時脈可減輕負擔並在低階掌機提升執行速度。</string>
+    <string name="overclock_title">模擬 CPU 時脈比率</string>
+    <string name="overclock_title_description" formatted="false">若已啟用覆蓋時脈，在此處調整 CPU 時脈比率 (預設為 100%)。</string>
+    <string name="synchronize_gpu_thread">同步 GPU 執行緒</string>
+    <string name="synchronize_gpu_thread_description">在雙核心模式下同步 GPU 執行緒可大幅減少當機與畫面異常機率。建議選擇「略過閒置時 (On Idle Skipping)」，強烈不建議設為「永不 (Never)」。</string>
+
+    <!-- Log Configuration -->
+    <string name="log_submenu">記錄檔 (Log)</string>
+    <string name="log_to_file">將記錄寫入檔案</string>
+    <string name="log_to_file_description">將已啟用的記錄訊息寫入 Logs 資料夾中。會些微降低效能。</string>
+    <string name="log_verbosity">記錄詳細程度</string>
+    <string name="log_enable_all">啟用所有記錄類型</string>
+    <string name="log_enable_all_confirmation">確定要啟用所有類型的記錄嗎？</string>
+    <string name="log_disable_all">停用所有記錄類型</string>
+    <string name="log_disable_all_confirmation">確定要停用所有記錄嗎？</string>
+    <string name="log_clear">清除記錄檔</string>
+    <string name="log_clear_confirmation">確定要清空現有的記錄檔嗎？</string>
+    <string name="log_types">記錄類型篩選</string>
+
+    <!-- Debug -->
+    <string name="debug_submenu">除錯</string>
+    <string name="debug_warning">警告：除錯設定將會大幅降低模擬效能！</string>
+    <string name="debug_fastmem">停用 Fastmem 快速記憶體</string>
+    <string name="debug_fastmem_arena">停用 Fastmem Arena</string>
+    <string name="debug_large_entry_points_map">停用大型進入點映射表</string>
+    <string name="debug_jit_profiling_header">JIT 效能分析</string>
+    <string name="debug_jit_enable_block_profiling">啟用 JIT 區塊分析</string>
+    <string name="debug_jit_write_block_log_dump">輸出 JIT 區塊記錄傾印檔</string>
+    <string name="debug_jit_header">JIT 設定</string>
+    <string name="debug_jitoff">停用 JIT</string>
+    <string name="debug_jitloadstoreoff">停用 JIT Load/Store</string>
+    <string name="debug_jitloadstorefloatingoff">停用 JIT 浮點 Load/Store</string>
+    <string name="debug_jitloadstorepairedoff">停用 JIT 成對浮點 Load/Store</string>
+    <string name="debug_jitfloatingpointoff">停用 JIT 浮點運算</string>
+    <string name="debug_jitintegeroff">停用 JIT 整數運算</string>
+    <string name="debug_jitpairedoff">停用 JIT 成對指令運算</string>
+    <string name="debug_jitsystemregistersoff">停用 JIT 系統暫存器</string>
+    <string name="debug_jitbranchoff">停用 JIT 分支跳躍</string>
+    <string name="debug_jitregistercacheoff">停用 JIT 暫存器快取</string>
+
+    <!-- Miscellaneous -->
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="ok">確定</string>
+    <string name="off">關閉</string>
+    <string name="cancel">取消</string>
+	<string name="cancelling">正在取消…</string>
+    <string name="clear">清除</string>
+    <string name="disabled">已停用</string>
+    <string name="error">錯誤</string>
+    <string name="other">其他</string>
+    <string name="continue_anyway">無論如何仍要繼續</string>
+
+    <!-- Game Grid Screen-->
+    <string name="platform_gamecube">GameCube 遊戲</string>
+    <string name="platform_wii">Wii 遊戲</string>
+    <string name="platform_wiiware">WiiWare 遊戲</string>
+    <string name="add_directory_title">新增遊戲目錄至遊戲庫</string>
+    <string name="grid_menu_settings">一般設定</string>
+    <string name="grid_menu_graphics_settings">繪圖設定</string>
+    <string name="grid_menu_gcpad_settings">GameCube 輸入設定</string>
+    <string name="grid_menu_wiimote_settings">Wii 輸入設定</string>
+    <string name="grid_menu_refresh">重新整理遊戲庫</string>
+    <string name="grid_menu_open_file">開啟遊戲檔案</string>
+    <string name="grid_menu_install_wad">安裝 WAD 至 NAND</string>
+    <string name="grid_menu_import_wii_save">匯入 Wii 存檔</string>
+    <string name="grid_menu_import_nand_backup">匯入 BootMii NAND 備份檔</string>
+    <string name="grid_menu_online_system_update">執行線上系統更新</string>
+    <string name="grid_menu_load_wii_system_menu">啟動 Wii 系統選單</string>
+    <string name="grid_menu_load_wii_system_menu_installed">啟動 Wii 系統選單 (%s)</string>
+	<string name="grid_menu_load_vwii_system_menu_installed">啟動 vWii 系統選單 (%s)</string>
+    <string name="import_in_progress">正在匯入中...</string>
+    <string name="do_not_close_app">請勿關閉應用程式！</string>
+    <string name="wad_install_success">已成功將此標題安裝至虛擬 NAND。</string>
+    <string name="wad_install_failure">安裝此標題至 NAND 失敗。</string>
+    <string name="wii_save_exists">NAND 中已存在此標題的存檔資料。覆蓋前建議先行備份現有存檔。\n確定要立即覆蓋嗎？</string>
+    <string name="wii_save_import_success">存檔檔案匯入成功。</string>
+    <string name="wii_save_import_error">匯入存檔失敗。您的 NAND 檔案可能已損毀，或系統被限制存取檔案。</string>
+    <string name="wii_save_import_corruped_source">匯入存檔失敗。該檔案看似已毀損或並非有效的 Wii 存檔檔。</string>
+    <string name="wii_save_import_title_missing">匯入存檔失敗。請先進入遊戲一次建立基礎資料後再試。</string>
+    <string name="nand_import_warning">將新 NAND 合併至目前選取的 NAND 會覆蓋現有的所有頻道與遊戲存檔，此操作無法復原。強烈建議先備份雙方 NAND。確定要繼續嗎？</string>
+    <string name="system_menu_not_installed_title">尚未安裝</string>
+    <string name="system_menu_not_installed_message">尚未安裝 Wii 系統選單。是否要立即進行安裝？\n\n將從網際網路下載約 110 MiB 資料，建議使用 Wi-Fi 連線。</string>
+
+    <!-- Game Properties Screen -->
+    <string name="properties_details">遊戲詳細資訊</string>
+    <string name="properties_start_with_riivolution">載入 Riivolution 補丁啟動</string>
+    <string name="properties_set_default_iso">設為預設遊戲 (Default ISO)</string>
+	<string name="properties_convert">轉換光碟格式</string>
+	<string name="properties_system_update">執行系統更新</string>
+    <string name="properties_edit_game_settings">自訂個別遊戲設定</string>
+	<string name="properties_edit_cheats">編輯金手指代碼</string>
+    <string name="properties_controller">控制器設定</string>
+    <string name="properties_gc_controller">GameCube 控制器設定</string>
+    <string name="properties_wii_controller">Wii 控制器設定</string>
+    <string name="properties_clear_game_settings">清除個別遊戲自訂設定</string>
+    <string name="properties_clear_success">已清除 %1$s 的自訂設定</string>
+    <string name="properties_clear_game_settings_confirmation">確定要刪除此遊戲的所有自訂設定與金手指代碼嗎？</string>
+    <string name="properties_clear_failure">無法清除 %1$s 的自訂設定</string>
+    <string name="properties_clear_missing">此遊戲未建立個別設定</string>
+    <string name="preferences_save_exit">儲存並離開</string>
+    <string name="preferences_game_properties">遊戲屬性</string>
+    <string name="preferences_settings">設定</string>
+    <string name="preferences_extensions">擴充裝置按鍵綁定</string>
+    <string name="game_ini_junk_title">偵測到多餘的殘留設定</string>
+    <string name="game_ini_junk_question">此遊戲的 INI 設定檔包含由舊版 Dolphin 殘留的多餘資料，可能會干擾全域設定的套用。\n\n是否要刪除此遊戲的個別設定檔以解決此問題？所有針對此遊戲加入的自訂設定與金手指將會被重設，此操作無法復原。</string>
+
+    <!-- Game Details Screen -->
+	<string name="game_details_country">發行地區</string>
+    <string name="game_details_company">發行公司</string>
+    <string name="game_details_game_id">遊戲 ID</string>
+    <string name="game_details_revision">版本 (Revision)</string>
+    <string name="game_details_file_size">檔案大小</string>
+    <string name="game_details_file_format">檔案格式</string>
+    <string name="game_details_compression">壓縮演算法</string>
+    <string name="game_details_block_size">區塊大小 (Block Size)</string>
+    <string name="game_details_no_compression">無壓縮</string>
+    <string name="game_details_save_folder">存檔位置</string>
+    <string name="game_details_size_and_format">%1$s (%2$s)</string>
+
+    <!-- Convert Screen -->
+    <string name="convert_format">目標格式</string>
+    <string name="convert_block_size">區塊大小</string>
+    <string name="convert_compression">壓縮格式</string>
+    <string name="convert_compression_level">壓縮等級</string>
+    <string name="convert_remove_junk_data">移除垃圾填充資料 (不可逆)</string>
+    <string name="convert_convert">開始轉換</string>
+    <string name="convert_converting">正在轉換中...</string>
+    <string name="convert_warning_iso">轉為 ISO 格式時移除垃圾填充資料並不會節省空間（除非您事後將其手動壓縮為 ZIP 等壓縮包）。仍要繼續嗎？</string>
+    <string name="convert_warning_gcz">在未移除垃圾資料的情況下將 Wii 鏡像轉換為 GCZ，相較於 ISO 並無法顯著節省空間。仍要繼續嗎？</string>
+    <string name="convert_warning_nkit">Dolphin 無法直接將 NKit 格式還原為標準非 NKit 格式，轉換 NKit 檔案仍會輸出為 NKit 格式。\n\n若欲還原 NKit 檔案，請使用原先轉換至 NKit 時所使用的還原工具程式。\n\n確定仍要繼續嗎？</string>
+    <string name="convert_success_message">光碟鏡像檔已成功轉換完成。</string>
+    <string name="convert_failure_message">Dolphin 執行要求的轉換操作失敗。</string>
+    <string name="convert_format_info">ISO：最簡單且相容性最佳的標準格式，受到各軟體廣泛支援，但佔用空間最大。\n\nGCZ：基本壓縮格式，相容於絕大多數 Dolphin 版本及部分工具，但無法有效壓縮垃圾填充資料或 Wii 加密資料。\n\nWIA：高階壓縮格式，相容於 Dolphin 5.0-12188 及更新版本，能高效壓縮 Wii 加密資料。\n\nRVZ：【最推薦】Dolphin 5.0-12188+ 現代高階專用格式，能完美高效壓縮垃圾資料與 Wii 加密資料，兼顧最高壓縮率與最快讀取速度。</string>
+
+    <!-- Riivolution Boot Screen -->
+    <string name="riivolution_sd_root">SD 卡根目錄：%1$s</string>
+    <string name="riivolution_start">啟動遊戲</string>
+	<string name="riivolution_disabled">已停用</string>
+
+    <!-- Emulation Menu -->
+    <string name="pause_emulation">暫停模擬</string>
+    <string name="unpause_emulation">繼續模擬</string>
+    <string name="emulation_screenshot">擷取螢幕畫面</string>
+    <string name="emulation_savestate">即時存檔</string>
+    <string name="emulation_loadstate">載入即時存檔</string>
+    <string name="emulation_exit">結束模擬</string>
+    <string name="emulation_state_slot">存檔槽 %1$d\n\n%2$s</string>
+    <string name="emulation_state_slot_empty">存檔槽 %1$d\n\n空白無存檔</string>
+    <string name="emulation_quicksave">快速存檔</string>
+    <string name="emulation_quickload">快速讀檔</string>
+    <string name="emulation_refresh_wiimotes">重新整理 Wii 遙控器連線</string>
+    <string name="emulation_overlay_controls">螢幕虛擬按鍵設定</string>
+    <string name="emulation_edit_layout">編輯觸控佈局</string>
+    <string name="emulation_done">完成</string>
+    <string name="emulation_toggle_controls">開關特定按鍵顯示</string>
+    <string name="emulation_toggle_all">顯示 / 隱藏全部按鍵</string>
+    <string name="emulation_control_scale">調整按鍵大小</string>
+    <string name="emulation_control_opacity">調整不透明度</string>
+    <string name="emulation_control_adjustments">微調觸控按鈕</string>
+    <string name="emulation_control_joystick_rel_center">相對搖桿中心 (手指觸控處為圓心)</string>
+    <string name="emulation_control_rumble">觸控震動反饋</string>
+    <string name="emulation_choose_controller">選取切換控制器</string>
+    <string name="emulation_menu_help">點擊返回鍵開啟選單。\n長按返回鍵可快速結束模擬。</string>
+    <string name="emulation_touch_overlay_reset">重設虛擬按鍵佈局</string>
+    <string name="emulation_joystick_mode">搖桿模擬模式</string>
+    <string name="emulation_ir_group">觸控紅外線指標 (IR Pointer)</string>
+    <string name="emulation_ir_recenter">鬆開後自動歸中</string>
+    <string name="emulation_ir_mode">紅外線模擬模式</string>
+    <string name="emulation_ir_sensitivity">紅外線靈敏度</string>
+    <string name="emulation_choose_doubletap">雙擊觸控按鈕設定</string>
+    <string name="emulation_motion_controls">體感陀螺儀控制</string>
+    <string name="emulation_hotkey">螢幕快速鍵 (Hotkey)</string>
+    <string name="emulation_quick_settings">遊戲內快捷設定</string>
+    <string name="open_settings_tooltip">開啟設定</string>
+
+    <!-- GC Adapter Menu-->
+    <string name="gc_adapter_rumble">啟用控制器震動</string>
+    <string name="gc_adapter_rumble_description">為此連接埠上的 GameCube 控制器啟用震動回饋功能。</string>
+    <string name="gc_adapter_bongos">邦哥鼓控制器 (Bongos)</string>
+    <string name="gc_adapter_bongos_description">若此連接埠連接大金剛邦哥鼓，請啟用此選項。</string>
+
+    <!-- Wii Remote Input Menu-->
+    <string name="header_wiimote_general">一般設定</string>
+    <string name="header_controllers">控制器清單</string>
+
+    <!-- Rumble -->
+    <string name="rumble_not_found">未偵測到裝置震動硬體</string>
+
+    <string name="write_permission_needed">模擬器需要外部儲存空間的寫入權限方可正常運行</string>
+    <string name="load_settings">正在載入設定...</string>
+    <string name="setting_not_runtime_editable">此設定無法在遊戲執行過程中即時修改。</string>
+    <string name="setting_clear_info">長按任一設定項目可將其重設為預設值。</string>
+    <string name="setting_clear_confirm">確定要將此設定項目還原為預設值嗎？</string>
+    <string name="setting_cleared">設定已還原</string>
+    <string name="emulation_change_disc">切換光碟 (換片)</string>
+
+    <string name="external_storage_not_mounted">必須掛載外部儲存裝置方可使用 Dolphin 模擬器</string>
+
+    <!-- Extra Leanback Homescreen Channels-->
+    <string name="homescreen_favorites">我的最愛遊戲</string>
+
+    <string name="select_dir">選取此資料夾</string>
+
+    <!-- File Pickers -->
+    <string name="no_file_extension">所選取的檔案似乎沒有副檔名。\n\n確定仍要繼續嗎？</string>
+    <string name="wrong_file_extension_single">所選取檔案的副檔名為「%1$s」，但應為「%2$s」。\n\n確定仍要繼續嗎？</string>
+    <string name="wrong_file_extension_multiple">所選取檔案的副檔名為「%1$s」，但預期的副檔名為：%2$s\n\n確定仍要繼續嗎？</string>
+    <string name="wrong_file_extension_in_directory">在所選取的目錄中未找到任何相容的遊戲檔案。\n\n支援的格式包含：%1$s</string>
+    <string name="unavailable_paths">Dolphin 目前沒有存取一個或多個已配置路徑的權限。是否要在啟動前修復此問題？</string>
+
+    <!-- Misc -->
+    <string name="pitch">總俯仰角 (Pitch)</string>
+    <string name="yaw">總偏航角 (Yaw)</string>
+    <string name="vertical_offset">垂直偏移量</string>
+    <string name="default_values">還原預設值</string>
+    <string name="slider_setting_value">%1$d%2$s</string>
+    <string name="disc_number">光碟 %1$d</string>
+    <string name="replug_gc_adapter">無法開啟 GameCube 轉接器，請重新插拔轉接器裝置。</string>
+    <string name="disabled_gc_overlay_notice">GameCube 控制器 1 目前設定為「無」</string>
+    <string name="ignore_warning_alert_messages">在本次執行階段中忽略此警告</string>
+    <string name="controls_heading">控制器管理</string>
+    <string name="setting_display_scale">顯示畫面縮放比</string>
+    <string name="properties_clear_game_data">清除遊戲快取</string>
+
+    <!-- Updater Window -->
+    <string name="grid_menu_open_updater">MMJR2 更新檢查器</string>
+    <string name="updater_title">更新檢查</string>
+    <string name="updater_error">檢查更新時發生錯誤，請檢查您的網路連線。</string>
+    <string name="updater_uptodate">目前已是最新版本！</string>
+    <string name="updater_newavailable">發現可用之新版本</string>
+    <string name="button_download">下載更新</string>
+    <string name="button_install">立即安裝</string>
+    <string name="version_description">最新版本：%1$s</string>
+    <string name="current_version">當前版本：%1$s</string>
+    <string name="download_size">大小：%1$.2f MB</string>
+    <string name="button_view_changelog">查看更新日誌</string>
+    <string name="changelog_section">版本 %1$s\n發布日期：%2$s\n更新內容：\n%3$s\n\n</string>
+
+    <!-- Update available dialog -->
+    <string name="updates_alert">有新版本可用</string>
+    <string name="updater_alert_body">Dolphin |MMJR2| 已釋出新版本，請問是否要下載更新？</string>
+    <string name="not_now">暫時不要</string>
+    <string name="skip_version">略過此版本</string>
+
+    <!-- Cheats Screen -->
+    <string name="cheats">金手指作弊碼</string>
+    <string name="cheats_with_game_id">金手指密碼：%1$s</string>
+    <string name="cheats_header_ar">Action Replay (AR) 代碼</string>
+    <string name="cheats_header_gecko">Gecko 代碼</string>
+    <string name="cheats_header_patch">遊戲補丁 (Patches)</string>
+    <string name="cheats_header_graphics_mod">繪圖 Mod 補丁</string>
+    <string name="cheats_add_ar">新增 AR 金手指代碼</string>
+    <string name="cheats_add_gecko">新增 Gecko 金手指代碼</string>
+    <string name="cheats_add_patch">新增遊戲補丁</string>
+    <string name="cheats_download_gecko">線上下載 Gecko 金手指</string>
+    <string name="cheats_name">名稱</string>
+    <string name="cheats_creator">作者</string>
+    <string name="cheats_notes">備註說明</string>
+    <string name="cheats_code">代碼內容</string>
+    <string name="cheats_edit">編輯代碼</string>
+    <string name="cheats_delete">刪除代碼</string>
+    <string name="cheats_delete_confirmation">確定要刪除「%1$s」嗎？</string>
+    <string name="cheats_error_no_name">代碼名稱不能為空</string>
+    <string name="cheats_error_no_code_lines">金手指代碼內容不能為空</string>
+    <string name="cheats_error_on_line">第 %1$d 行發生語法錯誤</string>
+    <string name="cheats_error_mixed_encryption">代碼行必須全為加密或全為解密格式，不得混合</string>
+    <string name="cheats_downloading">正在下載金手指中...</string>
+    <string name="cheats_download_failed">下載金手指代碼失敗。</string>
+    <string name="cheats_download_empty">線上檔案中未包含任何可用的金手指代碼。</string>
+    <string name="cheats_download_succeeded">成功下載 %1$d 筆代碼 (新增了 %2$d 筆)。</string>
+    <string name="cheats_disabled_warning">Dolphin 金手指系統目前處於停用狀態。</string>
+    <string name="gfx_mods_disabled_warning">繪圖 Mod 補丁系統目前處於停用狀態。</string>
+	<string name="cheats_open_settings">前往設定</string>
+	<string name="make_sure_continuous_scan_enabled">請確保已在核心設定中開啟「Wii 遙控器持續掃描」。</string>
+
+</resources>
