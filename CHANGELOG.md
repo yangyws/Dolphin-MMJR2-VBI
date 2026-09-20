@@ -4,6 +4,31 @@
 
 ---
 
+## [MOD-20260920-27] 掌機專屬獨立共存版設定 (org.dolphinemu.mmjr.zh)
+
+- **索引編號**：`[MOD-20260920-27]`
+- **日期**：2026-09-20
+- **類別**：掌機共存標準 / 建置配置調校 (Coexistence / Build)
+- **作者**：yangyws
+
+### 1. 修改動機與原本問題 (Why)
+- 遵循全域技能規範「🏷️ 掌機獨立共存版規格規範 (-zh Coexistence Standard)」，掌機設備上往往已安裝使用者長期使用的官方原版 Dolphin MMJR2（`package:org.dolphinemu.mmjr`）。
+- 為防止直接覆蓋原版或造成存檔/設定衝突，切出專屬 `main-zh` 分支，將套件識別碼切換為獨立共存 ID。
+
+### 2. 涉及檔案與模組清單 (Where)
+- 修改：[`Source/Android/app/build.gradle`](file:///D:/github/Dolphin-MMJR2-VBI/Source/Android/app/build.gradle)（`applicationId` 設為 `org.dolphinemu.mmjr.zh`）
+- 修改：[`Source/Android/app/src/main/res/values-zh-rTW/strings.xml`](file:///D:/github/Dolphin-MMJR2-VBI/Source/Android/app/src/main/res/values-zh-rTW/strings.xml)（`app_name` 設為 `Dolphin |MMJR2| 繁中版`）
+- 修改：[`CHANGELOG.md`](file:///D:/github/Dolphin-MMJR2-VBI/CHANGELOG.md)（記錄變更日誌與索引追溯）
+
+### 3. 具體技術解法與決策細節 (How)
+1. 在 `build.gradle` 的 `defaultConfig` 中將 `applicationId` 變更為 `org.dolphinemu.mmjr.zh`。
+2. 在 `values-zh-rTW/strings.xml` 中將應用程式名稱標註為「Dolphin |MMJR2| 繁中版」，使掌機桌面圖示具備直觀之中文識別度。
+
+### 4. 測試驗證結果 (Verification)
+- Gradle 設定檔與 XML 語法驗證通過。
+
+---
+
 ## [MOD-20260920-25] 完整補齊 40 組選單陣列在地化、notouch 字串與台灣繁中用語淨化
 
 - **索引編號**：`[MOD-20260920-25]`
