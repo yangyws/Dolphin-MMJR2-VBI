@@ -4,7 +4,7 @@
 
 ---
 
-本專案為 **Dolphin MMJR2** 的個人維護分支。此分支最初的目標是將 Sam Belliveau 所開發的 **VBI Skip (垂直消隱跳幀加速黑客)** 技術移植整合至 MMJR2 程式碼庫中，現已發展為持續維護的熱門掌機模擬器專案。
+本專案為 **Dolphin MMJR2** 的個人維護分支。此分支最初的目標是將 Sam Belliveau 所開發的 **VBI Skip (垂直消隱跳幀加速技術)** 移植整合至 MMJR2 程式碼庫中，現已發展為持續維護的熱門掌機模擬器專案。
 
 本分支的核心目標在於保留深受玩家喜愛的**經典 MMJR2 使用者介面**（更直覺且易於在觸控螢幕與掌機操作），同時支援小數點細部倍率縮放 (Fractional Scaling)，並持續整合來自 Dolphin 官方儲存庫的新功能與修復補丁。
 
@@ -40,7 +40,7 @@
   - 支援 OpenGL ES 3.0 或更新版本之 GPU（效能表現深受 GPU 驅動程式品質影響）。
   - 強烈建議搭配支援 Vulkan API 之硬體以獲得最佳畫面更新率。
 
-> Dolphin 僅能安裝於符合上述規格之設備上，未達標準之設備將無法完成安裝並會顯示錯誤提示。
+> Dolphin 僅能安裝於符合上述規格之裝置上，未達標準之裝置將無法完成安裝並會顯示錯誤提示。
 
 ---
 
@@ -77,7 +77,7 @@
 
 ## 🧩 Riivolution 遊戲補丁 (Riivolution Patches)
 
-欲掛載 Riivolution 補丁（如繁體中文漢化補丁、大型 Mod），請將解壓縮後的補丁資料夾放置於：
+欲掛載 Riivolution 補丁（如繁體中文化補丁、大型 Mod），請將解壓縮後的補丁資料夾放置於：
 ```text
 /mmjr2-vbi/Load/Riivolution/[遊戲ID]/
 ```
@@ -118,7 +118,7 @@ cd Source/Android
 
 衷心感謝以下優秀的開發團隊與先驅貢獻者：
 * **Dolphin Team**：感謝官方團隊數十年如一日的堅持與貢獻，讓經典遊戲能在現代硬體上完美重現！🐬
-* **原始 MMJR 與 MMJR2 開發者**：感謝建立並維護這些掌機優化分支的開拓者。
+* **原始 MMJR 與 MMJR2 開發者**：感謝建立並維護這些掌機最佳化分支的開拓者。
 * **Lumince**：感謝長期維護 MMJR2 並無私開源讓社群得以延續成果。
 * **Sam Belliveau**：感謝開發出神奇的 VBI Skip 跳幀加速技術。
 * **Bankaimaster999、sspacelynx 與 Weihuoya (偉哥)**：感謝對 Android 掌機模擬器生態的重要貢獻。
