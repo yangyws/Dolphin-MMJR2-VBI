@@ -74,3 +74,33 @@
 - 本機 Gradle 配置相容性檢查通過。
 - 語法與腳本路徑驗證無誤。
 
+---
+
+## [MOD-20260920-20] 建立獨立繁體中文說明文件 README_zh-TW.md 與首頁導覽連結
+
+- **索引編號**：`[MOD-20260920-20]`
+- **日期**：2026-09-20
+- **類別**：文件優化 / 社群在地化 (Docs / i18n)
+- **作者**：yangyws
+
+### 1. 修改動機與原本問題 (Why)
+- 原英文版 `Readme.md` 無法提供中文使用者完整的掌機硬體需求、資料夾架構、自訂材質包與 Riivolution 補丁安裝指引。
+- 為了在向官方母庫開 Pull Request 時維持主文件乾淨無衝突，採「方案 A：獨立建立專屬繁體中文說明檔」之最佳實踐，避免破壞官方首頁結構。
+
+### 2. 涉及檔案與模組清單 (Where)
+- 新增：[`README_zh-TW.md`](file:///D:/github/Dolphin-MMJR2-VBI/README_zh-TW.md)（完整 100% 台灣繁體中文說明文件）
+- 修改：[`Readme.md`](file:///D:/github/Dolphin-MMJR2-VBI/Readme.md)（於頂端加入繁中說明文件跳轉引導）
+- 更新：[`CHANGELOG.md`](file:///D:/github/Dolphin-MMJR2-VBI/CHANGELOG.md)（記錄變更追溯索引）
+
+### 3. 具體技術解法與決策細節 (How)
+1. **完整繁中化指南**：
+   - 全文採用台灣繁體中文與標準科技詞彙，詳細說明 MMJR2 VBI 掌機優化特色（VBI Skip、小數倍率縮放）。
+   - 清楚羅列 `/mmjr2-vbi/` 各子目錄用途、Game ID 查詢技巧、高畫質材質與補丁掛載教學。
+   - 整合 GitHub Actions 雲端 APK 下載指引與一鍵 `deploy.bat` 掌機部署說明。
+2. **乾淨 PR 友善架構**：
+   - 僅在原版 `Readme.md` 頂端保留簡潔引導連結，兼顧官方 PR 審查相容性與社群玩家易讀性。
+
+### 4. 測試驗證結果 (Verification)
+- Markdown 格式與相對連結驗證無誤。
+
+
