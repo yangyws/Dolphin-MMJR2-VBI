@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 台灣繁體中文在地化資源 (zh-TW-notouch) for Dolphin-MMJR2-VBI -->
+<resources>
+    <string name="clear">長按返回鍵以清除</string>
+</resources>

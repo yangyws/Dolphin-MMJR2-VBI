@@ -131,7 +131,7 @@
     <string name="skip_on_skip_idle">在略過閒置黑客中同步 GPU</string>
     <string name="skip_on_skip_idle_description">在略過閒置週期時同步模擬 CPU 與 GPU。停用此選項大致安全，但由於 CPU 與 GPU 未完全同步，可能導致異常或當機。為避免音訊爆音，請務必停用「音訊拉伸」。</string>
     <string name="jit_follow_branch">JIT 分支跟隨 (JIT Follow Branch)</string>
-    <string name="jit_follow_branch_description">允許模擬 CPU 跟隨特定分支指令。停用此選項大致安全，但有時可能引發異常或崩潰。</string>
+    <string name="jit_follow_branch_description">允許模擬 CPU 跟隨特定分支指令。停用此選項大致安全，但有時可能引發異常或當機。</string>
     <string name="overclock_warning" formatted="false">警告：變更預設時脈 (100%) 可能導致遊戲異常或錯誤。請勿在非預設時脈下回報遊戲 Bug。</string>
     <string name="gamecube_submenu">GameCube</string>
     <string name="system_language">系統語言</string>
@@ -206,7 +206,7 @@
     <string name="expand_to_cutout_area">延伸畫面至螢幕挖孔/瀏海區域</string>
     <string name="expand_to_cutout_area_description">將顯示畫面延伸填滿包含相機挖孔（瀏海）的整個螢幕區域。</string>
     <string name="panic_handlers">啟用恐慌錯誤提示處理器 (Panic Handlers)</string>
-    <string name="panic_handlers_description">當發生潛在嚴重錯誤時彈出提示視窗。停用可避免不致命的惱人彈窗，但若遇重大崩潰將無法看到原因。</string>
+    <string name="panic_handlers_description">當發生潛在嚴重錯誤時彈出提示視窗。停用可避免不致命的惱人彈窗，但若遇重大當機將無法看到原因。</string>
     <string name="osd_messages">顯示螢幕 OSD 提示訊息</string>
     <string name="osd_messages_description">在模擬畫面覆蓋顯示提示訊息（包含記憶卡寫入、視訊後端與 CPU 資訊，以及 JIT 快取清除等）。</string>
     <string name="download_game_covers">從 GameTDB.com 自動下載遊戲封面</string>
@@ -242,7 +242,7 @@
     <string name="audio_submenu">音效設定</string>
     <string name="dsp_emulation_engine">DSP 模擬引擎</string>
     <string name="audio_stretch">音訊時間拉伸 (Audio Stretching)</string>
-    <string name="audio_stretch_description">透過時間拉伸減少卡頓與爆音，但會略微增加音訊延遲。</string>
+    <string name="audio_stretch_description">透過時間拉伸減少畫面延遲與爆音，但會略微增加音訊延遲。</string>
     <string name="audio_volume">音效音量</string>
 
     <!-- Path Settings -->
@@ -348,7 +348,7 @@
     <string name="immediate_xfb">立即呈現 XFB (Immediate XFB)</string>
     <string name="immediate_xfb_description">XFB 複本生成時立即呈現在螢幕上，無需等待掃描線輸出。能大幅降低輸入延遲，但在某些遊戲可能造成畫面撕裂。</string>
     <string name="skip_duplicate_xfbs">略過呈現重複畫面幀</string>
-    <string name="skip_duplicate_xfbs_description">跳過重複未變更的畫面格，有助於低階設備提升流暢度，但可能使幀節奏略有不均。建議勾選。</string>
+    <string name="skip_duplicate_xfbs_description">跳過重複未變更的畫面格，有助於低階裝置提升流暢度，但可能使幀節奏略有不均。建議勾選。</string>
     <string name="fast_depth_calculation">快速深度計算</string>
     <string name="fast_depth_calculation_description">使用近似演算法計算深度值以提升運算速度。少數遊戲可能產生穿透錯誤，建議勾選。</string>
     <string name="disable_bbox">停用邊界框 (Disable Bounding Box)</string>
@@ -356,7 +356,7 @@
     <string name="vertex_rounding">頂點捨入 (Vertex Rounding)</string>
     <string name="vertex_rounding_description">將 2D 頂點與視口尺寸捨入為整數像素。在高內部解析度下可修復部分遊戲的線條瑕疵，原機解析度下無效。</string>
     <string name="vi_skip">VBI 跳幀加速 (VBI Skip)</string>
-    <string name="vi_skip_description" formatted="false">【MMJR2 核心特色】偵測到卡頓掉幀時自動跳過垂直消隱 (VI) 中斷，讓遊戲即使未達 100% 速度仍能保持音訊流暢不破音！可能造成少數遊戲凍結。</string>
+    <string name="vi_skip_description" formatted="false">【MMJR2 核心特色】偵測到畫面延遲掉格時自動跳過垂直消隱 (VI) 中斷，讓遊戲即使未達 100% 速度仍能保持音訊流暢不破音！可能造成少數遊戲凍結。</string>
     <string name="texture_cache_to_state">將紋理快取儲存至即時存檔</string>
     <string name="texture_cache_to_state_description">在即時存檔中包含 EFB 緩衝區與放大材質，能徹底解決讀取存檔時貼圖消失或模糊的問題，但會稍微增加存檔時間。</string>
     <string name="fast_texture_sampling">快速紋理取樣</string>
@@ -367,7 +367,7 @@
     <string name="fast_disc_speed">加速光碟讀取速度</string>
     <string name="fast_disc_speed_description">加速虛擬光碟機讀取速度以顯著縮短載入等待時間。依賴精確讀取時序的遊戲可能出現不穩定或當機。</string>
     <string name="wait_for_shaders">啟動前預先編譯著色器</string>
-    <string name="wait_for_shaders_description">在遊戲啟動時先行編譯已知著色器，啟動時需稍候，但能大幅減輕進入遊戲初期的卡頓現象。</string>
+    <string name="wait_for_shaders_description">在遊戲啟動時先行編譯已知著色器，啟動時需稍候，但能大幅減輕進入遊戲初期的畫面頓挫現象。</string>
 
     <string name="advanced_graphics_submenu">進階繪圖設定</string>
     <string name="gfx_mods_and_custom_textures">繪圖 Mod 補丁與高解析度材質</string>
@@ -376,7 +376,7 @@
     <string name="load_custom_texture">載入自訂高畫質材質</string>
     <string name="load_custom_texture_description">從 User/Load/Textures/&lt;game_id&gt;/ 與 DynamicInputTextures 載入高解析度材質包。</string>
     <string name="cache_custom_texture">預先讀取材質至記憶體</string>
-    <string name="cache_custom_texture_description">啟動時將高解析度材質預載入至系統記憶體，可徹底解決動態讀取卡頓，但需消耗較多 RAM。</string>
+    <string name="cache_custom_texture_description">啟動時將高解析度材質預載入至系統記憶體，可徹底解決動態讀取頓挫與延遲，但需消耗較多 RAM。</string>
     <string name="dump_texture">傾印遊戲紋理 (Dump Textures)</string>
     <string name="dump_texture_description">將解碼後的遊戲材質傾印匯出至 User/Dump/Textures/&lt;game_id&gt;/。非製作材質包請勿勾選。</string>
     <string name="dump_base_texture">傾印基礎紋理</string>
@@ -650,7 +650,7 @@
     <string name="version_description">最新版本：%1$s</string>
     <string name="current_version">當前版本：%1$s</string>
     <string name="download_size">大小：%1$.2f MB</string>
-    <string name="button_view_changelog">查看更新日誌</string>
+    <string name="button_view_changelog">檢視更新記錄</string>
     <string name="changelog_section">版本 %1$s\n發布日期：%2$s\n更新內容：\n%3$s\n\n</string>
 
     <!-- Update available dialog -->

@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 台灣繁體中文在地化資源 (zh-TW) for Dolphin-MMJR2-VBI -->
+<!-- 100% 符合 Android 原生標準與台灣繁體中文科技用語規範 -->
+<resources>
+    <!-- 地區代碼 -->
+    <string-array name="regionEntries">
+        <item>NTSC-J (日本/亞洲)</item>
+        <item>NTSC-U (北美)</item>
+        <item>PAL (歐洲/澳洲)</item>
+        <item>NTSC-K (韓國)</item>
+    </string-array>
+
+    <!-- x86-64 模擬核心 -->
+    <string-array name="emuCoresEntriesX86_64">
+        <item>x86-64 JIT 即時編譯器 (建議)</item>
+        <item>快取直譯器 (較慢)</item>
+        <item>直譯器 (最慢)</item>
+    </string-array>
+
+    <!-- ARM64 模擬核心 -->
+    <string-array name="emuCoresEntriesARM64">
+        <item>ARM64 JIT 即時編譯器 (建議)</item>
+        <item>快取直譯器 (較慢)</item>
+        <item>直譯器 (最慢)</item>
+    </string-array>
+
+    <string-array name="emuCoresEntriesGeneric">
+        <item>快取直譯器</item>
+        <item>直譯器</item>
+    </string-array>
+
+    <!-- DSP 音訊引擎 -->
+    <string-array name="dspEngineEntriesX86_64">
+        <item>DSP 高階模擬 HLE (建議)</item>
+        <item>DSP 低階重編譯器 LLE (慢)</item>
+        <item>DSP 低階直譯器 LLE (極慢)</item>
+    </string-array>
+
+    <string-array name="dspEngineEntriesGeneric">
+        <item>DSP 高階模擬 HLE (建議)</item>
+        <item>DSP 低階直譯器 LLE (極慢)</item>
+    </string-array>
+
+    <!-- GameCube 系統語言 -->
+    <string-array name="gameCubeSystemLanguageEntries">
+        <item>英文 (English)</item>
+        <item>德文 (German)</item>
+        <item>法文 (French)</item>
+        <item>西班牙文 (Spanish)</item>
+        <item>義大利文 (Italian)</item>
+        <item>荷蘭文 (Dutch)</item>
+    </string-array>
+
+    <!-- 插槽裝置 -->
+    <string-array name="slotDeviceEntries">
+        <item>無</item>
+        <item>虛擬裝置</item>
+        <item>記憶卡 (Memory Card)</item>
+        <item>GCI 存檔資料夾</item>
+    </string-array>
+
+    <!-- 序列通訊埠裝置 -->
+    <string-array name="serialPort1DeviceEntries">
+        <item>無</item>
+        <item>寬頻網路卡 (XLink Kai)</item>
+        <item>寬頻網路卡 (HLE)</item>
+        <item>數據機卡 (Modem)</item>
+        <item>虛擬裝置</item>
+    </string-array>
+
+    <!-- Wii 系統語言 -->
+    <string-array name="wiiSystemLanguageEntries">
+        <item>日文 (Japanese)</item>
+        <item>英文 (English)</item>
+        <item>德文 (German)</item>
+        <item>法文 (French)</item>
+        <item>西班牙文 (Spanish)</item>
+        <item>義大利文 (Italian)</item>
+        <item>荷蘭文 (Dutch)</item>
+        <item>簡體中文</item>
+        <item>繁體中文</item>
+        <item>韓文 (Korean)</item>
+    </string-array>
+
+    <!-- 聲道模式 -->
+    <string-array name="soundModeEntries">
+        <item>單聲道</item>
+        <item>立體聲</item>
+        <item>環繞音效</item>
+    </string-array>
+
+    <!-- 感應條位置 -->
+    <string-array name="sensorBarPositionEntries">
+        <item>螢幕上方</item>
+        <item>螢幕下方</item>
+    </string-array>
+
+    <!-- 記錄詳細層級 -->
+    <string-array name="logVerbosityEntriesMaxLevelInfo">
+        <item>通知 (Notice)</item>
+        <item>錯誤 (Error)</item>
+        <item>警告 (Warning)</item>
+        <item>資訊 (Info)</item>
+    </string-array>
+
+    <string-array name="logVerbosityEntriesMaxLevelDebug">
+        <item>通知 (Notice)</item>
+        <item>錯誤 (Error)</item>
+        <item>警告 (Warning)</item>
+        <item>資訊 (Info)</item>
+        <item>除錯 (Debug)</item>
+    </string-array>
+
+    <!-- 繪圖 API 後端 -->
+    <string-array name="videoBackendEntries">
+        <item>OpenGL ES</item>
+        <item>Vulkan</item>
+        <item>Null (無輸出)</item>
+    </string-array>
+
+    <!-- Wii 遙控器擴充配件 -->
+    <string-array name="wiimoteExtensionsEntries">
+        <item>無</item>
+        <item>雙截棍手把 (Nunchuk)</item>
+        <item>傳統手把 (Classic)</item>
+        <item>吉他控制器 (Guitar)</item>
+        <item>爵士鼓控制器 (Drums)</item>
+        <item>DJ 混音轉盤 (Turntable)</item>
+    </string-array>
+
+    <!-- 材質快取精確度 -->
+    <string-array name="textureCacheAccuracyEntries">
+        <item>快速 (Fast)</item>
+        <item>中等 (Medium)</item>
+        <item>安全精確 (Safe)</item>
+    </string-array>
+
+    <!-- 著色器編譯模式 -->
+    <string-array name="shaderCompilationModeEntries">
+        <item>專用著色器 (預設)</item>
+        <item>全域超級著色器 (Exclusive Ubershaders)</item>
+        <item>混合超級著色器 (Hybrid Ubershaders)</item>
+        <item>跳過未編譯繪製 (Skip Drawing)</item>
+    </string-array>
+
+    <string-array name="shaderCompilationDescriptionEntries">
+        <item>專用著色器 (預設)：不使用超級著色器。初次載入新畫面時會有著色器編譯延遲，但 GPU 負擔最低。適合中低階硬體或掌機裝置。若不確定請選擇此模式。</item>
+        <item>全域超級著色器：一律使用超級著色器。幾乎完全消除著色器編譯延遲，但對 GPU 效能要求極高。除非在混合模式下仍有頓挫且配備旗艦級 GPU，否則不建議開啟。</item>
+        <item>混合超級著色器：僅在專用著色器編譯期間以超級著色器過渡，編譯完成後切回專用著色器。在多數情況下能兼顧流暢度與能耗，但效果取決於顯示卡驅動程式支援度。</item>
+        <item>跳過未編譯繪製：當著色器尚未完成編譯時直接跳過該物件之繪製。可完全避免編譯延遲，但可能在畫面中看到短暫閃爍或物件破圖現象。</item>
+    </string-array>
+
+    <!-- 內部解析度倍率 -->
+    <string-array name="internalResolutionEntries">
+        <item>1x 原生解析度 (640x528)</item>
+        <item>1.5x 原生解析度 (960x792)</item>
+        <item>2x 原生解析度 (1280x1056) - 720p</item>
+        <item>2.5x 原生解析度 (1600x1320)</item>
+        <item>3x 原生解析度 (1920x1584) - 1080p</item>
+        <item>4x 原生解析度 (2560x2112) - 1440p</item>
+        <item>5x 原生解析度 (3200x2640)</item>
+        <item>6x 原生解析度 (3840x3168) - 4K</item>
+        <item>7x 原生解析度 (4480x3696)</item>
+    </string-array>
+
+    <!-- 全景反鋸齒 FSAA -->
+    <string-array name="FSAAEntries">
+        <item>預設 (關閉)</item>
+        <item>2x</item>
+        <item>4x</item>
+        <item>8x</item>
+    </string-array>
+
+    <!-- 材質過濾 -->
+    <string-array name="textureFilteringEntries">
+        <item>預設</item>
+        <item>強制鄰近取樣 (Nearest)</item>
+        <item>強制線性過濾 (Linear)</item>
+    </string-array>
+
+    <!-- 各向異性過濾 -->
+    <string-array name="anisotropicFilteringEntries">
+        <item>1x (關閉)</item>
+        <item>2x</item>
+        <item>4x</item>
+        <item>8x</item>
+        <item>16x</item>
+    </string-array>
+
+    <!-- 立體 3D 模式 -->
+    <string-array name="stereoscopyEntries">
+        <item>關閉</item>
+        <item>左右並排 (Side-by-Side)</item>
+        <item>上下並排 (Top-and-Bottom)</item>
+        <item>紅藍 3D (Anaglyph)</item>
+    </string-array>
+
+    <!-- 畫面長寬比 -->
+    <string-array name="aspectRatioEntries">
+        <item>自動 (Auto)</item>
+        <item>強制 16:9</item>
+        <item>強制 4:3</item>
+        <item>拉伸至全螢幕</item>
+    </string-array>
+
+    <!-- 國家/地區名稱 (Taiwan 嚴格翻譯為「台灣」) -->
+    <string-array name="countryNames">
+        <item>歐洲</item>
+        <item>日本</item>
+        <item>美國</item>
+        <item>澳洲</item>
+        <item>法國</item>
+        <item>德國</item>
+        <item>義大利</item>
+        <item>韓國</item>
+        <item>荷蘭</item>
+        <item>俄羅斯</item>
+        <item>西班牙</item>
+        <item>台灣</item>
+        <item>英國</item>
+        <item>未知</item>
+    </string-array>
+
+    <!-- GameCube 控制器模式 -->
+    <string-array name="gcpadTypeEntries">
+        <item>停用</item>
+        <item>虛擬/模擬手把</item>
+        <item>GameCube 實體轉接器</item>
+    </string-array>
+
+    <!-- Wii 遙控器模式 -->
+    <string-array name="wiimoteTypeEntries">
+        <item>停用</item>
+        <item>模擬 Wii 遙控器</item>
+        <item>真實 Wii 遙控器 (需 DolphinBar)</item>
+    </string-array>
+
+    <!-- 控制器選單項目 -->
+    <string-array name="controllersEntries">
+        <item>GameCube 控制器</item>
+        <item>Wii 遙控器</item>
+        <item>橫持 Wii 遙控器</item>
+        <item>雙截棍手把 (Nunchuk)</item>
+        <item>傳統控制器 (Classic)</item>
+        <item>全域設定與震動</item>
+    </string-array>
+
+    <!-- 搖桿模擬模式 -->
+    <string-array name="joystickEmulationModeEntries">
+        <item>停用</item>
+        <item>紅外線指標 (IR Pointer)</item>
+        <item>揮動 Wii 遙控器 (Swing)</item>
+        <item>傾斜遙控器 (Tilt)</item>
+        <item>揮動雙截棍 (Nunchuk Swing)</item>
+        <item>傾斜雙截棍 (Nunchuk Tilt)</item>
+        <item>晃動 (Shake)</item>
+        <item>十字鍵 (D-Pad)</item>
+    </string-array>
+
+    <!-- 紅外線指標模式 -->
+    <string-array name="irModeEntries">
+        <item>停用</item>
+        <item>跟隨觸控 (Follow)</item>
+        <item>拖曳指標 (Drag)</item>
+    </string-array>
+
+    <!-- 雙擊動作 -->
+    <string-array name="doubleTap">
+        <item>A 鍵</item>
+        <item>B 鍵</item>
+        <item>2 鍵</item>
+    </string-array>
+
+    <string-array name="doubleTapWithClassic">
+        <item>A 鍵</item>
+        <item>B 鍵</item>
+        <item>2 鍵</item>
+        <item>a 鍵</item>
+    </string-array>
+
+    <!-- 螢幕方向 -->
+    <string-array name="orientationEntries">
+        <item>橫向 (Landscape)</item>
+        <item>直向 (Portrait)</item>
+        <item>自動旋轉</item>
+    </string-array>
+
+    <!-- 快捷鍵模式 -->
+    <string-array name="hotkeyModeEntries">
+        <item>停用</item>
+        <item>跳過 CPU 的 EFB 存取</item>
+        <item>僅將 EFB 複本存入紋理材質</item>
+        <item>立即呈現 XFB 複本</item>
+    </string-array>
+
+    <!-- 體感感測器 -->
+    <string-array name="motionControlsEntries">
+        <item>使用裝置感應器 (包含指標模擬)</item>
+        <item>使用裝置感應器 (不含指標模擬)</item>
+        <item>不使用裝置感應器</item>
+    </string-array>
+
+    <!-- 映像檔轉換格式 -->
+    <string-array name="convertFormatEntries">
+        <item>ISO (未壓縮映像檔)</item>
+        <item>GCZ (舊版壓縮格式)</item>
+        <item>WIA (Wii 封裝格式)</item>
+        <item>RVZ (現代高壓縮無損格式)</item>
+    </string-array>
+
+    <!-- WIA 壓縮選項 -->
+    <string-array name="convertCompressionWiaEntries">
+        <item>不壓縮</item>
+        <item>Purge (清除空區塊)</item>
+        <item>bzip2 (較慢)</item>
+        <item>LZMA (較慢)</item>
+        <item>LZMA2 (較慢)</item>
+    </string-array>
+
+    <!-- RVZ 壓縮選項 -->
+    <string-array name="convertCompressionRvzEntries">
+        <item>不壓縮</item>
+        <item>bzip2 (較慢)</item>
+        <item>LZMA (較慢)</item>
+        <item>LZMA2 (較慢)</item>
+        <item>Zstandard (建議，效能最佳)</item>
+    </string-array>
+
+    <!-- 主題選項 -->
+    <string-array name="themeEntries">
+        <item>MMJR2 紫 (預設)</item>
+        <item>AMOLED 純黑</item>
+        <item>霓虹紅</item>
+        <item>霓虹藍</item>
+        <item>青綠</item>
+    </string-array>
+</resources>

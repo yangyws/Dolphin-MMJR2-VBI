@@ -4,6 +4,36 @@
 
 ---
 
+## [MOD-20260920-25] 完整補齊 40 組選單陣列在地化、notouch 字串與台灣繁中用語淨化
+
+- **索引編號**：`[MOD-20260920-25]`
+- **日期**：2026-09-20
+- **類別**：在地化精修 / 陣列補齊 (i18n / Arrays)
+- **作者**：yangyws
+
+### 1. 修改動機與原本問題 (Why)
+- 深度排查發現原本 `Source/Android/app/src/main/res/values/arrays.xml` 裡的 55 組陣列完全未提供繁體中文資源，導致使用者點擊設定選單時，彈出的下拉式選單與單選對話框（包含 CPU 核心、DSP 引擎、著色器編譯說明、控制器型號、國家清單等）全部呈現英文。
+- `countryNames` 陣列中的 `Taiwan` 需確保符合標準繁中「台灣」稱謂，杜絕不當稱謂。
+- 缺少無觸控裝置專用之 `values-zh-rTW-notouch/strings.xml`。
+- 部分字串仍殘留「崩潰」、「日誌」、「設備」等習慣用語。
+
+### 2. 涉及檔案與模組清單 (Where)
+- 新增：[`Source/Android/app/src/main/res/values-zh-rTW/arrays.xml`](file:///D:/github/Dolphin-MMJR2-VBI/Source/Android/app/src/main/res/values-zh-rTW/arrays.xml)（40 組 UI 下拉選單繁中陣列，含 `countryNames` 台灣稱謂）
+- 新增：[`Source/Android/app/src/main/res/values-zh-rTW-notouch/strings.xml`](file:///D:/github/Dolphin-MMJR2-VBI/Source/Android/app/src/main/res/values-zh-rTW-notouch/strings.xml)（無觸控裝置長按提示字串）
+- 修改：[`Source/Android/app/src/main/res/values-zh-rTW/strings.xml`](file:///D:/github/Dolphin-MMJR2-VBI/Source/Android/app/src/main/res/values-zh-rTW/strings.xml)（淨化「當機」、「更新記錄」、「延遲掉格」、「裝置」等用語）
+- 修改：[`CHANGELOG.md`](file:///D:/github/Dolphin-MMJR2-VBI/CHANGELOG.md)（記錄變更日誌與索引追溯）
+
+### 3. 具體技術解法與決策細節 (How)
+1. 建立完整的 `values-zh-rTW/arrays.xml`，涵蓋 ARM64 JIT 即時編譯核心、DSP 模擬引擎、4 種著色器編譯模式及詳細說明、畫面長寬比、控制器型號、動態感測器設定、映像檔壓縮格式、主題色彩與國家地區名稱（`Taiwan` 嚴格翻譯為「**台灣**」）。
+2. 在 `values-zh-rTW/strings.xml` 中將非台灣慣用語全數校正為台灣科技標準用語。
+3. 新增 `values-zh-rTW-notouch` 專屬提示。
+
+### 4. 測試驗證結果 (Verification)
+- XML 語法驗證通過，40 組陣列載入合法。
+- 全方位稽核無任何不合規台灣稱謂與大陸習慣用語。
+
+---
+
 ## [MOD-20260920-18] Android 前端完整 100% 台灣繁體在地化與原生語系架構支援
 
 - **索引編號**：`[MOD-20260920-18]`
