@@ -4,6 +4,34 @@
 
 ---
 
+## [MOD-20260920-28] 全專案 README 語言導航條與命名結構一致化 (README Navigation Standardization)
+
+- **索引編號**：`[MOD-20260920-28]`
+- **日期**：2026-09-20
+- **類別**：說明文件規範化 / 導航列統一 (Documentation / Standardization)
+- **作者**：yangyws
+
+### 1. 修改動機與原本問題 (Why)
+- 遵循使用者全域規範要求，各儲存庫說明文件檔名與頂端語言切換導航列必須具備極致一致的版面風格。
+- 移除先前自訂的繁瑣文字（如「> 🇹🇼 繁體中文說明文件：...」），統一行規標準：
+  - 中文版頂部：`[English](README.en.md) | **台灣繁體中文**`
+  - 英文版頂部：`**English** | [台灣繁體中文](README.md)`
+- 將繁中主力分支說明文件正名為 `README.md`，原英文版對應為 `README.en.md`。
+
+### 2. 涉及檔案與模組清單 (Where)
+- 重命名：[`README_zh-TW.md`](file:///D:/github/Dolphin-MMJR2-VBI/README_zh-TW.md) -> [`README.md`](file:///D:/github/Dolphin-MMJR2-VBI/README.md)
+- 重命名：[`Readme.md`](file:///D:/github/Dolphin-MMJR2-VBI/Readme.md) -> [`README.en.md`](file:///D:/github/Dolphin-MMJR2-VBI/README.en.md)
+- 修改：[`CHANGELOG.md`](file:///D:/github/Dolphin-MMJR2-VBI/CHANGELOG.md)
+
+### 3. 具體技術解法與決策細節 (How)
+1. 透過 Git 將檔案安全重新對齊為標準全大寫前綴 `README.md` (中文) 與 `README.en.md` (英文)。
+2. 在兩份說明文件開頭統一定義純淨雙向切換條，並更新內容中的 Package ID 描述為 `org.dolphinemu.mmjr.zh` 掌機獨立共存版。
+
+### 4. 測試驗證結果 (Verification)
+- Markdown 預覽與超連結雙向切換跳轉測試正常。
+
+---
+
 ## [MOD-20260920-27] 掌機專屬獨立共存版設定 (org.dolphinemu.mmjr.zh)
 
 - **索引編號**：`[MOD-20260920-27]`

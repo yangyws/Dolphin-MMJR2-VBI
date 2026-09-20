@@ -1,6 +1,8 @@
 # Dolphin MMJR2 - VBI Fork
 
-> 🇹🇼 **繁體中文說明文件**：請參閱 [README_zh-TW.md](README_zh-TW.md) 以取得完整繁中功能介紹與掌機部署指引。
+**English** | [台灣繁體中文](README.md)
+
+---
 
 This is a personal fork of Dolphin MMJR2. Initially, the goal of this fork was to implement Sam Belliveau's VBI Skip speed hack into the MMJR2 codebase, but has since grown into a semi-actively maintained project. My primary focus is preserving the older MMJR2 user interface, which I find more intuitive and user-friendly, and support for fractional scaling while integrating features and fixes from the upstream Dolphin repository.
 

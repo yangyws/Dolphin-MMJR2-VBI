@@ -1,5 +1,9 @@
 # Dolphin MMJR2 - VBI 分支 (繁體中文版)
 
+[English](README.en.md) | **台灣繁體中文**
+
+---
+
 本專案為 **Dolphin MMJR2** 的個人維護分支。此分支最初的目標是將 Sam Belliveau 所開發的 **VBI Skip (垂直消隱跳幀加速黑客)** 技術移植整合至 MMJR2 程式碼庫中，現已發展為持續維護的熱門掌機模擬器專案。
 
 本分支的核心目標在於保留深受玩家喜愛的**經典 MMJR2 使用者介面**（更直覺且易於在觸控螢幕與掌機操作），同時支援小數點細部倍率縮放 (Fractional Scaling)，並持續整合來自 Dolphin 官方儲存庫的新功能與修復補丁。
@@ -42,7 +46,7 @@
 
 ## 📂 儲存路徑與資料夾結構
 
-本分支的應用程式套件識別碼 (Package ID) 為 `org.dolphinemu.mmjr`，可與 Dolphin 官方版共存安裝，但**不能**與其他同套件 ID 的 MMJR2 版本同時安裝。
+本分支的應用程式套件識別碼 (Package ID) 為 `org.dolphinemu.mmjr.zh`，為掌機專屬獨立共存版，可與 Dolphin 官方原版及既有之 MMJR2 同時安裝且存檔設定互不干擾。
 
 專案使用者資料目錄建立於裝置內部儲存空間的根目錄：`/mmjr2-vbi/`。
 
