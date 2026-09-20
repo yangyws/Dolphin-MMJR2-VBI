@@ -3,7 +3,7 @@ chcp 65001 >nul
 setlocal enabledelayedexpansion
 
 echo ========================================================
-echo   Dolphin-MMJR2-VBI 繁體中文版 - Android 掌機部署腳本
+echo   Dolphin-MMJR2-VBI-zh - Android 掌機部署腳本
 echo ========================================================
 echo.
 
@@ -81,10 +81,10 @@ echo [*] 正在推送並安裝至設備 %DEVICE_ID% (保留應用程式資料 -r
 if %errorlevel% equ 0 (
     echo.
     echo ========================================================
-    echo   [成功] Dolphin-MMJR2-VBI 繁體中文版已成功安裝！
+    echo   [成功] Dolphin-MMJR2-VBI-zh 已成功安裝！
     echo ========================================================
     echo.
-    set /p LAUNCH="請問是否要立即在掌機上啟動 Dolphin-MMJR2-VBI？(Y/N): "
+    set /p LAUNCH="請問是否要立即在掌機上啟動 Dolphin-MMJR2-VBI-zh？(Y/N): "
     if /i "!LAUNCH!"=="Y" (
         echo [*] 正在啟動應用程式...
         %ADB% -s %DEVICE_ID% shell am start -n org.dolphinemu.mmjr.zh/org.dolphinemu.dolphinemu.ui.main.MainActivity 2>nul

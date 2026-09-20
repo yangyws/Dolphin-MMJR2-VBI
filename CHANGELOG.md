@@ -4,6 +4,32 @@
 
 ---
 
+## [MOD-20260921-01] 掌機獨立共存版應用程式名稱正名為 Dolphin-MMJR2-VBI-zh (Rename App Name to Dolphin-MMJR2-VBI-zh)
+
+- **索引編號**：`[MOD-20260921-01]`
+- **日期**：2026-09-21
+- **類別**：掌機共存規格規範 / 介面命名校正 (Branding / Handheld Coexistence)
+- **作者**：yangyws
+
+### 1. 修改動機與原本問題 (Why)
+- 使用者明確指示：獨立共存之 zh 版應用程式名稱應為 `Dolphin-MMJR2-VBI-zh`，而非「繁中版」或「Dolphin |MMJR2| 繁中版」。
+- 統一掌機桌面圖示標籤與部署腳本名稱，使名稱精確對齊專案共存命名規範。
+
+### 2. 涉及檔案與模組清單 (Where)
+- 修改：[`Source/Android/app/src/main/res/values-zh-rTW/strings.xml`](file:///D:/github/Dolphin-MMJR2-VBI/Source/Android/app/src/main/res/values-zh-rTW/strings.xml)
+- 修改：[`Source/Android/app/src/main/res/values/strings.xml`](file:///D:/github/Dolphin-MMJR2-VBI/Source/Android/app/src/main/res/values/strings.xml)
+- 修改：[`deploy.bat`](file:///D:/github/Dolphin-MMJR2-VBI/deploy.bat)
+- 修改：[`CHANGELOG.md`](file:///D:/github/Dolphin-MMJR2-VBI/CHANGELOG.md)
+
+### 3. 具體技術解法與決策細節 (How)
+1. 在 `values-zh-rTW/strings.xml` 與 `values/strings.xml` 中，將 `app_name` 字串資源全面更新為 `Dolphin-MMJR2-VBI-zh`。
+2. 同步更新 `deploy.bat` 中所有終端機提示訊息與啟動提問為 `Dolphin-MMJR2-VBI-zh`。
+
+### 4. 測試驗證結果 (Verification)
+- XML 語法檢查正確，字串資源皆已精確更新。
+
+---
+
 ## [MOD-20260920-30] 解除啟動完整性檢查暗樁修復閃退問題 (Fix Launch Crash & Remove Integrity Check)
 
 - **索引編號**：`[MOD-20260920-30]`
