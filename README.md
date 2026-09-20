@@ -1,130 +1,344 @@
-# Dolphin MMJR2 - VBI 分支 (繁體中文版)
+# Dolphin MMJR2 - VBI Fork
 
-[English](README.en.md) | **台灣繁體中文**
-
----
-
-本專案為 **Dolphin MMJR2** 的個人維護分支。此分支最初的目標是將 Sam Belliveau 所開發的 **VBI Skip (垂直消隱跳幀加速黑客)** 技術移植整合至 MMJR2 程式碼庫中，現已發展為持續維護的熱門掌機模擬器專案。
-
-本分支的核心目標在於保留深受玩家喜愛的**經典 MMJR2 使用者介面**（更直覺且易於在觸控螢幕與掌機操作），同時支援小數點細部倍率縮放 (Fractional Scaling)，並持續整合來自 Dolphin 官方儲存庫的新功能與修復補丁。
+**English** | [台灣繁體中文](README.zh-TW.md)
 
 ---
 
-## 🇹🇼 繁體中文化版本特色 (`[MOD-20260920-18]`)
+This is a personal fork of Dolphin MMJR2. Initially, the goal of this fork was to implement Sam Belliveau's VBI Skip speed hack into the MMJR2 codebase, but has since grown into a semi-actively maintained project. My primary focus is preserving the older MMJR2 user interface, which I find more intuitive and user-friendly, and support for fractional scaling while integrating features and fixes from the upstream Dolphin repository.
 
-* **100% 完整台灣繁體中文 (zh-TW)**：
-  - 全數 602 條介面與設定字串完整在地化。
-  - 對齊 Dolphin 官方核心詞庫（`Languages/po/zh_TW.po`），嚴格採用台灣科技與遊戲術語（如：搖桿、板機鍵、內部解析度、著色器、畫面幀率、最佳化、儲存庫、專案、預設等），無任何簡體字與大陸用語。
-* **原生 Android 13+ 語系動態切換**：
-  - 導入原生 `res/xml/locales_config.xml`，支援在 Android 系統設定中針對個別應用程式自由切換語言。
-* **一鍵 ADB 掌機部署腳本 (`deploy.bat`)**：
-  - 支援自動偵測連線之 Android 掌機設備（如 Odin、Retroid Pocket、ANBERNIC 等），一鍵推送更新安裝並啟動。
-* **GitHub Actions 雲端自動建置管線**：
-  - 推送程式碼時自動觸發雲端編譯，免去本機繁重的 NDK/C++ 編譯環境配置即可取得最新 APK 產物。
+## Disclaimer
+- **WARNING**: This fork is based on older source code! It may introduce bugs of its own and the support I can give is very limited. If you are new to emulation or prefer stability, please use [Official Dolphin](https://dolphin-emu.org/).
 
----
+## Android Requirements
 
-## 免責聲明 (Disclaimer)
+* OS
+    * Android 5.0 Lollipop or higher (SDK >= 21)).
+* Processor
+    * A 64-bit ARM CPU supporting arm64-v8a ABI.
+* Graphics
+    * A graphics processor that supports OpenGL ES 3.0 or higher. Performance varies heavily with [driver quality](https://dolphin-emu.org/blog/2013/09/26/dolphin-emulator-and-opengl-drivers-hall-fameshame/).
+    * A graphics processor that supports standard desktop OpenGL features is recommended for best performance.
 
-* ⚠️ **警告**：本分支基於 Dolphin 早期專案程式碼架構，可能存在其自有的未知問題，且社群支援資源有限。若您是剛接觸模擬器的新手或追求最高相容性與穩定性，建議使用 [Dolphin 官方版本](https://dolphin-emu.org/)。
+Dolphin can only be installed on devices that satisfy the above requirements. Attempting to install on an unsupported device will fail and display an error message.
 
----
+## Additional Information
+- This user directory for this fork is created in /mmjr2-vbi/ at the root of your device.
+- The id of this fork is `org.dolphinemu.mmjr`. It may be installed together with Dolphin Official, but not with other MMJR2 forks. 
 
-## 📱 Android 系統與硬體需求
+## Folder Structure
+* `Cache`: Game Covers, UID Caches and Shader Caches
+* `Config`: Configuration files
+* `Dump`: Anything dumped from Dolphin
+* `GameSettings`: Per-game custom configurations
+* `GC`: Memory cards and system BIOS
+* `Load`: Graphic Mods, Riivolution Patches, Custom Textures, WiiSDSync
+* `Logs`: Logs, if enabled
+* `ResourcePacks`: Android build doesn´t support Resource Packs, use Load folder instead
+* `ScreenShots`: Screenshots taken via Dolphin
+* `StateSaves`: Save States, if enabled
+* `Wii`: Wii NAND contents
 
-* **作業系統**：
-  - Android 5.0 (Lollipop) 或更高版本 (API Level >= 21)。
-* **處理器 (CPU)**：
-  - 支援 `arm64-v8a` ABI 之 64 位元 ARM 處理器。
-* **圖形處理器 (GPU)**：
-  - 支援 OpenGL ES 3.0 或更新版本之 GPU（效能表現深受 GPU 驅動程式品質影響）。
-  - 強烈建議搭配支援 Vulkan API 之硬體以獲得最佳畫面更新率。
+## Custom Textures
+Custom textures have to be placed in the user directory under `Load/Textures/[GameID]/`. You can find the Game ID by long-pressing n the game and selecting "Details".
 
-> Dolphin 僅能安裝於符合上述規格之設備上，未達標準之設備將無法完成安裝並會顯示錯誤提示。
+## Riivolution Patches
+Riivolution Patches have to be placed in the user directory under `Load/Riivolution/[GameID]/`. Once you have extracted the patches here, long press on the game and select `Start with Riivolution Patches`
 
----
+## Acknowledgments
+A huge thank you to:
+- **Dolphin Team**: For their incredible work in making emulation possible on modern hardware. Your dedication and contributions are truly inspiring! 🐬👏
+- **Original MMJR and MMJR2 Developers**: For creating and maintaining these forks.
+- **Lumince**: For keeping MMJR2 alive and well for so long and letting me continue their work.
+- **Sam Belliveau**: For the VBI Skip speed hack that started this whole mess.
 
-## 📂 儲存路徑與資料夾結構
+## Last Notes
+I work on this fork in my spare time and while I wouldn´t call myself a developer, it is a fun way to learn code and app development.
 
-本分支的應用程式套件識別碼 (Package ID) 為 `org.dolphinemu.mmjr.zh`，為掌機專屬獨立共存版，可與 Dolphin 官方原版及既有之 MMJR2 同時安裝且存檔設定互不干擾。
+Any help is welcome. If you want to contribute, leave me a message in [Discussions](https://github.com/Medard22/Dolphin-MMJR2-VBI/discussions).
 
-專案使用者資料目錄建立於裝置內部儲存空間的根目錄：`/mmjr2-vbi/`。
+You can find the latest changelog [here](https://github.com/Medard22/Dolphin-MMJR2-VBI/discussions/45)
 
-### 目錄結構解析：
-* `Cache/`：遊戲封面快取、UID 快取與著色器快取 (Shader Cache)。
-* `Config/`：全域與核心配置設定檔 (INI)。
-* `Dump/`：紋理、音訊或畫面傾印匯出檔。
-* `GameSettings/`：針對個別遊戲的專屬自訂設定檔。
-* `GC/`：GameCube 虛擬記憶卡存檔與系統 BIOS 檔案 (`ipl.bin`)。
-* `Load/`：繪圖 Mod、Riivolution 補丁、自訂高解析度材質包、WiiSDSync。
-* `Logs/`：執行除錯記錄檔（若有開啟記錄功能）。
-* `ResourcePacks/`：資源套件目錄（Android 端請優先使用 `Load` 資料夾）。
-* `ScreenShots/`：在模擬器中擷取的遊戲螢幕截圖。
-* `StateSaves/`：即時存檔檔案。
-* `Wii/`：Wii 虛擬 NAND 系統檔案與遊戲本體存檔。
 
----
+## Dolphin MMJR2 Fork
+Mainly, this fork is meant for personal use. This repo's only function at the current time is to update MMJR2 to the latest Dolphin Offical Dev Source code without scoped storage changes merged.
+If you want scoped storage, go use Dolphin Official Builds. I have no use for scoped storage, nor any changes related to it. I wont be merging these changes. Have a nice day!
 
-## 🎨 高解析度自訂材質包 (Custom Textures)
+An Android-only performance-focused dolphin fork, rebased on top of latest dolphin development builds and reimplementing MMJ UX and performance improvements, plus adding our own.
 
-欲使用高畫質自訂材質包，請將材質圖檔放置於使用者目錄下的：
-```text
-/mmjr2-vbi/Load/Textures/[遊戲ID]/
-```
-> **提示**：您可以在遊戲清單中長按該遊戲圖示，並選擇「遊戲詳細資訊 (Details)」以查詢該遊戲專屬的 Game ID（如 `GALE01`）。
+Grab the latest build in the [releases](https://github.com/Lumince/Dolphin-MMJR2/releases) section, or check for new version in the in-app updater. Old MMJR v1.0 builds can be found at the old repository [here](https://github.com/Bankaimaster999/Dolphin-MMJR/releases). 1.0 and 2.0 builds can be installed without conflicts as they use different folders, but **savestates are not compatible**. We kindly ask you to avoid misusing GitHub Issues and Pull Requests.
 
----
+This fork wouldn't be possible without the crazy amount of work that developers much more skilled than us put into Dolphin.
 
-## 🧩 Riivolution 遊戲補丁 (Riivolution Patches)
+## Dolphin - A GameCube and Wii Emulator
 
-欲掛載 Riivolution 補丁（如繁體中文漢化補丁、大型 Mod），請將解壓縮後的補丁資料夾放置於：
-```text
-/mmjr2-vbi/Load/Riivolution/[遊戲ID]/
-```
-放置完成後，在主介面中長按該遊戲，並選取**「載入 Riivolution 補丁啟動」**即可。
+[Homepage](https://dolphin-emu.org/) | [Project Site](https://github.com/dolphin-emu/dolphin) | [Buildbot](https://dolphin.ci/) | [Forums](https://forums.dolphin-emu.org/) | [Wiki](https://wiki.dolphin-emu.org/) | [GitHub Wiki](https://github.com/dolphin-emu/dolphin/wiki) | [Issue Tracker](https://bugs.dolphin-emu.org/projects/emulator/issues) | [Coding Style](https://github.com/dolphin-emu/dolphin/blob/master/Contributing.md) | [Transifex Page](https://app.transifex.com/delroth/dolphin-emu/dashboard/)
 
----
+Dolphin is an emulator for running GameCube and Wii games on Windows,
+Linux, macOS, and recent Android devices. It's licensed under the terms
+of the GNU General Public License, version 2 or later (GPLv2+).
 
-## 🚀 取得與安裝方式
+Please read the [FAQ](https://dolphin-emu.org/docs/faq/) before using Dolphin.
 
-### 方式一：從 GitHub Actions 雲端下載預先編譯 APK（最方便）
-1. 進入本專案 GitHub 儲存庫頁面，點選頂部 **Actions** 分頁。
-2. 點選最新一次成功的 `Build Android APK` 工作流。
-3. 於頁面下方的 **Artifacts** 區塊下載 `dolphin-mmjr2-vbi-android-apk`。
-4. 解壓縮後將 APK 透過傳輸線或 `deploy.bat` 安裝至掌機。
+## System Requirements
 
-### 方式二：使用一鍵 ADB 腳本部署至掌機 (`deploy.bat`)
-1. 確保掌機已開啟「USB 除錯」並以傳輸線連接至電腦。
-2. 將下載或編譯好的 `.apk` 放置於專案根目錄。
-3. 雙擊執行根目錄下的 [`deploy.bat`](deploy.bat)，腳本將自動偵測設備、安裝並詢問是否立即在掌機上開啟。
+### Desktop
 
-### 方式三：本機自原始碼編譯
-本專案已整合 Gradle 與 Android NDK C++ 編譯架構：
-```pwsh
-# 1. 遞迴同步所有 C++ submodules (重要)
+* OS
+    * Windows (10 or higher).
+    * Linux.
+    * macOS (10.15 Catalina or higher).
+    * Unix-like systems other than Linux are not officially supported but might work.
+* Processor
+    * A CPU with SSE2 support.
+    * A modern CPU (3 GHz and Dual Core, not older than 2008) is highly recommended.
+* Graphics
+    * A reasonably modern graphics card (Direct3D 11.1 / OpenGL 3.3).
+    * A graphics card that supports Direct3D 11.1 / OpenGL 4.4 is recommended.
+
+### Android
+
+* OS
+    * Android (5.0 Lollipop or higher).
+* Processor
+    * A processor with support for 64-bit applications (either ARMv8 or x86-64).
+* Graphics
+    * A graphics processor that supports OpenGL ES 3.0 or higher. Performance varies heavily with [driver quality](https://dolphin-emu.org/blog/2013/09/26/dolphin-emulator-and-opengl-drivers-hall-fameshame/).
+    * A graphics processor that supports standard desktop OpenGL features is recommended for best performance.
+
+Dolphin can only be installed on devices that satisfy the above requirements. Attempting to install on an unsupported device will fail and display an error message.
+
+## Building for Windows
+
+Use the solution file `Source/dolphin-emu.sln` to build Dolphin on Windows.
+Dolphin targets the latest MSVC shipped with Visual Studio or Build Tools.
+Other compilers might be able to build Dolphin on Windows but have not been
+tested and are not recommended to be used. Git and latest Windows SDK must be
+installed when building.
+
+Make sure to pull submodules before building:
+```sh
 git submodule update --init --recursive
-
-# 2. 進入 Android 前端目錄
-cd Source/Android
-
-# 3. 執行 Gradle 編譯 Release APK
-./gradlew.bat assembleRelease
 ```
-編譯完成之 APK 位於：`Source/Android/app/build/outputs/apk/release/app-release.apk`。
 
----
+The "Release" solution configuration includes performance optimizations for the best user experience but complicates debugging Dolphin.
+The "Debug" solution configuration is significantly slower, more verbose and less permissive but makes debugging Dolphin easier.
 
-## 👏 致謝與致敬 (Acknowledgments)
+## Building for Linux and macOS
 
-衷心感謝以下優秀的開發團隊與先驅貢獻者：
-* **Dolphin Team**：感謝官方團隊數十年如一日的堅持與貢獻，讓經典遊戲能在現代硬體上完美重現！🐬
-* **原始 MMJR 與 MMJR2 開發者**：感謝建立並維護這些掌機優化分支的開拓者。
-* **Lumince**：感謝長期維護 MMJR2 並無私開源讓社群得以延續成果。
-* **Sam Belliveau**：感謝開發出神奇的 VBI Skip 跳幀加速技術。
-* **Bankaimaster999、sspacelynx 與 Weihuoya (偉哥)**：感謝對 Android 掌機模擬器生態的重要貢獻。
+Dolphin requires [CMake](https://cmake.org/) for systems other than Windows. 
+You need a recent version of GCC or Clang with decent c++20 support. CMake will
+inform you if your compiler is too old.
+Many libraries are bundled with Dolphin and used if they're not installed on 
+your system. CMake will inform you if a bundled library is used or if you need
+to install any missing packages yourself. You may refer to the [wiki](https://github.com/dolphin-emu/dolphin/wiki/Building-for-Linux) for more information.
 
----
+Make sure to pull submodules before building:
+```sh
+git submodule update --init --recursive
+```
 
-## 📜 授權條款 (License)
+### macOS Build Steps:
 
-Dolphin 採用 **GNU General Public License, version 2 or later (GPLv2+)** 授權條款開源釋出。請參閱各模組中的 License 檔案以取得更多法律詳細資訊。
+A binary supporting a single architecture can be built using the following steps: 
+
+1. `mkdir build`
+2. `cd build`
+3. `cmake ..`
+4. `make -j $(sysctl -n hw.logicalcpu)`
+
+An application bundle will be created in `./Binaries`.
+
+A script is also provided to build universal binaries supporting both x64 and ARM in the same
+application bundle using the following steps:
+
+1. `mkdir build`
+2. `cd build`
+3. `python ../BuildMacOSUniversalBinary.py`
+4. Universal binaries will be available in the `universal` folder
+
+Doing this is more complex as it requires installation of library dependencies for both x64 and ARM (or universal library
+equivalents) and may require specifying additional arguments to point to relevant library locations. 
+Execute BuildMacOSUniversalBinary.py --help for more details.  
+
+### Linux Global Build Steps:
+
+To install to your system.
+
+1. `mkdir build`
+2. `cd build`
+3. `cmake ..`
+4. `make -j $(nproc)`
+5. `sudo make install`
+
+### Linux Local Build Steps:
+
+Useful for development as root access is not required.
+
+1. `mkdir Build`
+2. `cd Build`
+3. `cmake .. -DLINUX_LOCAL_DEV=true`
+4. `make -j $(nproc)`
+5. `ln -s ../../Data/Sys Binaries/`
+
+### Linux Portable Build Steps:
+
+Can be stored on external storage and used on different Linux systems.
+Or useful for having multiple distinct Dolphin setups for testing/development/TAS.
+
+1. `mkdir Build`
+2. `cd Build`
+3. `cmake .. -DLINUX_LOCAL_DEV=true`
+4. `make -j $(nproc)`
+5. `cp -r ../Data/Sys/ Binaries/`
+6. `touch Binaries/portable.txt`
+
+## Building for Android
+
+These instructions assume familiarity with Android development. If you do not have an
+Android dev environment set up, see [AndroidSetup.md](AndroidSetup.md).
+
+Make sure to pull submodules before building:
+```sh
+git submodule update --init --recursive
+```
+
+If using Android Studio, import the Gradle project located in `./Source/Android`.
+
+Android apps are compiled using a build system called Gradle. Dolphin's native component,
+however, is compiled using CMake. The Gradle script will attempt to run a CMake build
+automatically while building the Java code.
+
+## Uninstalling
+
+On Windows, simply remove the extracted directory, unless it was installed with the NSIS installer,
+in which case you can uninstall Dolphin like any other Windows application.
+
+Linux users can run `cat install_manifest.txt | xargs -d '\n' rm` as root from the build directory
+to uninstall Dolphin from their system.
+
+macOS users can simply delete Dolphin.app to uninstall it.
+
+Additionally, you'll want to remove the global user directory if you don't plan on reinstalling Dolphin.
+
+## Command Line Usage
+
+```
+Usage: Dolphin.exe [options]... [FILE]...
+
+Options:
+  --version             show program's version number and exit
+  -h, --help            show this help message and exit
+  -u USER, --user=USER  User folder path
+  -m MOVIE, --movie=MOVIE
+                        Play a movie file
+  -e <file>, --exec=<file>
+                        Load the specified file
+  -n <16-character ASCII title ID>, --nand_title=<16-character ASCII title ID>
+                        Launch a NAND title
+  -C <System>.<Section>.<Key>=<Value>, --config=<System>.<Section>.<Key>=<Value>
+                        Set a configuration option
+  -s <file>, --save_state=<file>
+                        Load the initial save state
+  -d, --debugger        Show the debugger pane and additional View menu options
+  -l, --logger          Open the logger
+  -b, --batch           Run Dolphin without the user interface (Requires
+                        --exec or --nand-title)
+  -c, --confirm         Set Confirm on Stop
+  -v VIDEO_BACKEND, --video_backend=VIDEO_BACKEND
+                        Specify a video backend
+  -a AUDIO_EMULATION, --audio_emulation=AUDIO_EMULATION
+                        Choose audio emulation from [HLE|LLE]
+```
+
+Available DSP emulation engines are HLE (High Level Emulation) and
+LLE (Low Level Emulation). HLE is faster but less accurate whereas
+LLE is slower but close to perfect. Note that LLE has two submodes (Interpreter and Recompiler)
+but they cannot be selected from the command line.
+
+Available video backends are "D3D" and "D3D12" (they are only available on Windows), "OGL", and "Vulkan".
+There's also "Null", which will not render anything, and
+"Software Renderer", which uses the CPU for rendering and
+is intended for debugging purposes only.
+
+## DolphinTool Usage
+```
+usage: dolphin-tool COMMAND -h
+
+commands supported: [convert, verify, header, extract]
+```
+
+```
+Usage: convert [options]... [FILE]...
+
+Options:
+  -h, --help            show this help message and exit
+  -u USER, --user=USER  User folder path, required for temporary processing
+                        files.Will be automatically created if this option is
+                        not set.
+  -i FILE, --input=FILE
+                        Path to disc image FILE.
+  -o FILE, --output=FILE
+                        Path to the destination FILE.
+  -f FORMAT, --format=FORMAT
+                        Container format to use. Default is RVZ. [iso|gcz|wia|rvz]
+  -s, --scrub           Scrub junk data as part of conversion.
+  -b BLOCK_SIZE, --block_size=BLOCK_SIZE
+                        Block size for GCZ/WIA/RVZ formats, as an integer.
+                        Suggested value for RVZ: 131072 (128 KiB)
+  -c COMPRESSION, --compression=COMPRESSION
+                        Compression method to use when converting to WIA/RVZ.
+                        Suggested value for RVZ: zstd [none|zstd|bzip|lzma|lzma2]
+  -l COMPRESSION_LEVEL, --compression_level=COMPRESSION_LEVEL
+                        Level of compression for the selected method. Ignored
+                        if 'none'. Suggested value for zstd: 5
+```
+
+```
+Usage: verify [options]...
+
+Options:
+  -h, --help            show this help message and exit
+  -u USER, --user=USER  User folder path, required for temporary processing
+                        files.Will be automatically created if this option is
+                        not set.
+  -i FILE, --input=FILE
+                        Path to disc image FILE.
+  -a ALGORITHM, --algorithm=ALGORITHM
+                        Optional. Compute and print the digest using the
+                        selected algorithm, then exit. [crc32|md5|sha1]
+```
+
+```
+Usage: header [options]...
+
+Options:
+  -h, --help            show this help message and exit
+  -i FILE, --input=FILE
+                        Path to disc image FILE.
+  -b, --block_size      Optional. Print the block size of GCZ/WIA/RVZ formats,
+then exit.
+  -c, --compression     Optional. Print the compression method of GCZ/WIA/RVZ
+                        formats, then exit.
+  -l, --compression_level
+                        Optional. Print the level of compression for WIA/RVZ
+                        formats, then exit.
+```
+
+```
+Usage: extract [options]...
+
+Options:
+  -h, --help            show this help message and exit
+  -i FILE, --input=FILE
+                        Path to disc image FILE.
+  -o FOLDER, --output=FOLDER
+                        Path to the destination FOLDER.
+  -p PARTITION, --partition=PARTITION
+                        Which specific partition you want to extract.
+  -s SINGLE, --single=SINGLE
+                        Which specific file/directory you want to extract.
+  -l, --list            List all files in volume/partition. Will print the
+                        directory/file specified with --single if defined.
+  -q, --quiet           Mute all messages except for errors.
+  -g, --gameonly        Only extracts the DATA partition.
+```
