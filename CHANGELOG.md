@@ -4,6 +4,30 @@
 
 ---
 
+## [MOD-20260920-29] CI 工作流觸發條件對齊全新分支架構 (CI Workflow Trigger Alignment)
+
+- **索引編號**：`[MOD-20260920-29]`
+- **日期**：2026-09-20
+- **類別**：CI/CD 自動化管線維護 (CI/CD / Automation)
+- **作者**：yangyws
+
+### 1. 修改動機與原本問題 (Why)
+- 儲存庫分支已遵照使用者指示重整為純淨原版 `main`、主力整合版 `main-zh` 與提 PR 專用 `pr/i18n-traditional-chinese`。
+- 原有的 `build-android.yml` 仍綁定已刪除的舊分支 `rolling-dev`，導致推送至 `main-zh` 時未能自動觸發雲端 Android APK 編譯。
+
+### 2. 涉及檔案與模組清單 (Where)
+- 修改：[`.github/workflows/build-android.yml`](file:///D:/github/Dolphin-MMJR2-VBI/.github/workflows/build-android.yml)
+- 修改：[`CHANGELOG.md`](file:///D:/github/Dolphin-MMJR2-VBI/CHANGELOG.md)
+
+### 3. 具體技術解法與決策細節 (How)
+1. 將 `push` 與 `pull_request` 的觸發分支更新為 `main-zh`、`main` 與 `pr/i18n-traditional-chinese`。
+2. 保留 `workflow_dispatch` 手動觸發支援。
+
+### 4. 測試驗證結果 (Verification)
+- YAML 語法驗證通過。
+
+---
+
 ## [MOD-20260920-28] 全專案 README 語言導航條與命名結構一致化 (README Navigation Standardization)
 
 - **索引編號**：`[MOD-20260920-28]`

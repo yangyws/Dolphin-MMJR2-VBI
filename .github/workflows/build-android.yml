@@ -3,11 +3,13 @@ name: Build Android APK
 on:
   push:
     branches:
+      - main-zh
+      - main
       - pr/i18n-traditional-chinese
-      - rolling-dev
   pull_request:
     branches:
-      - rolling-dev
+      - main-zh
+      - main
   workflow_dispatch:
 
 jobs:
