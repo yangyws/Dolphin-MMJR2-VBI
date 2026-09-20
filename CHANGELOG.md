@@ -4,6 +4,32 @@
 
 ---
 
+## [MOD-20260920-28] 全專案 README 語言導航條一致化 (README Navigation Standardization)
+
+- **索引編號**：`[MOD-20260920-28]`
+- **日期**：2026-09-20
+- **類別**：說明文件規範化 / 導航列統一 (Documentation / Standardization)
+- **作者**：yangyws
+
+### 1. 修改動機與原本問題 (Why)
+- 遵循全專案統一風格規範，說明文件頂部導航列統一行規標準：
+  - 中文版頂部：`[English](Readme.md) | **台灣繁體中文**`
+  - 英文版頂部：`**English** | [台灣繁體中文](README_zh-TW.md)`
+- 移除多餘提示標籤，保持說明文件純淨、直覺且一致。
+
+### 2. 涉及檔案與模組清單 (Where)
+- 修改：[`Readme.md`](file:///D:/github/Dolphin-MMJR2-VBI/Readme.md)
+- 修改：[`README_zh-TW.md`](file:///D:/github/Dolphin-MMJR2-VBI/README_zh-TW.md)
+- 修改：[`CHANGELOG.md`](file:///D:/github/Dolphin-MMJR2-VBI/CHANGELOG.md)
+
+### 3. 具體技術解法與決策細節 (How)
+1. 替換頂端呼出區塊為純淨雙向切換條 `English | 台灣繁體中文`。
+
+### 4. 測試驗證結果 (Verification)
+- 雙向超連結跳轉測試正常。
+
+---
+
 ## [MOD-20260920-25] 完整補齊 40 組選單陣列在地化、notouch 字串與台灣繁中用語淨化
 
 - **索引編號**：`[MOD-20260920-25]`
