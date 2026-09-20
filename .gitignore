@@ -43,3 +43,5 @@ CMakeLists.txt.user
 /.vscode/
 Source/Android/app/release/output-metadata.json
 artifacts/
+
+output_apks/
