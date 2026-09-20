@@ -1,6 +1,6 @@
 # Dolphin MMJR2 - VBI Fork
 
-**English** | [台灣繁體中文](README_zh-TW.md)
+**English** | [台灣繁體中文](README.zh-TW.md)
 
 ---
 

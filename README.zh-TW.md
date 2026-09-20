@@ -1,6 +1,6 @@
 # Dolphin MMJR2 - VBI 分支 (繁體中文版)
 
-[English](Readme.md) | **台灣繁體中文**
+[English](README.md) | **台灣繁體中文**
 
 ---
 
