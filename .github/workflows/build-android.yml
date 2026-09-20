@@ -1,0 +1,58 @@
+name: Build Android APK
+
+on:
+  push:
+    branches:
+      - pr/i18n-traditional-chinese
+      - rolling-dev
+  pull_request:
+    branches:
+      - rolling-dev
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build Dolphin-MMJR2-VBI Android APK
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: 'gradle'
+
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y ninja-build ccache
+
+      - name: Accept Android SDK Licenses and Install NDK
+        run: |
+          echo "y" | ${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager --licenses || true
+          echo "y" | ${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager --install "ndk;26.1.10909125" "cmake;3.22.1"
+
+      - name: Build Android APK
+        working-directory: Source/Android
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleRelease --stacktrace
+
+      - name: Collect APK Artifacts
+        run: |
+          mkdir -p output_apks
+          find Source/Android/app/build/outputs/apk -type f -name "*.apk" -exec cp {} output_apks/ \;
+          ls -la output_apks/
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dolphin-mmjr2-vbi-android-apk
+          path: output_apks/*.apk
+          retention-days: 14

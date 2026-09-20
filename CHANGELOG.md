@@ -38,3 +38,39 @@
 - **PowerShell `[xml]` 驗證**：602 個字串資源全部通過驗證，無任何 XML 語法錯誤。
 - **特殊符號與跳脫驗證**：未跳脫單引號計數為 0，異常 `&` 符號計數為 0，所有 XML 標籤均合規。
 - **語系用語檢查**：簡體字與大陸用語偵測結果為 0，100% 通過台灣繁體用語規範。
+
+---
+
+## [MOD-20260920-19] 建立 GitHub Actions 雲端 Android APK 自動建置管線與本機部署相容性修復
+
+- **索引編號**：`[MOD-20260920-19]`
+- **日期**：2026-09-20
+- **類別**：CI/CD / 建置管線優化 (Build / CI/CD)
+- **作者**：yangyws
+
+### 1. 修改動機與原本問題 (Why)
+- 原專案儲存庫未包含任何 GitHub Actions CI 工作流，導致推送到個人分支後無法自動觸發雲端 Android APK 編譯。
+- 原 `Source/Android/app/build.gradle` 直接以 `new FileInputStream(keystorePropertiesFile)` 讀取金鑰設定，若專案中缺少 `keystore.properties`（如公開 Fork 或本機初次建置環境），Gradle 配置階段將拋出 `FileNotFoundException` 導致建置中斷。
+- 掌機玩家與開發者需要一鍵式 ADB 快速部署工具，以便直接將編譯完成之繁體中文版 APK 安裝至實體掌機設備。
+
+### 2. 涉及檔案與模組清單 (Where)
+- 新增：[`.github/workflows/build-android.yml`](file:///D:/github/Dolphin-MMJR2-VBI/.github/workflows/build-android.yml)（GitHub Actions 雲端自動建置 workflow）
+- 修改：[`Source/Android/app/build.gradle`](file:///D:/github/Dolphin-MMJR2-VBI/Source/Android/app/build.gradle)（加入金鑰檔案存在檢查，未配置 release 金鑰時自動 fallback 至 debug 簽章）
+- 新增：[`deploy.bat`](file:///D:/github/Dolphin-MMJR2-VBI/deploy.bat)（本機一鍵 ADB 掌機偵測、安裝與啟動腳本）
+- 更新：[`CHANGELOG.md`](file:///D:/github/Dolphin-MMJR2-VBI/CHANGELOG.md)（記錄變更追溯索引）
+
+### 3. 具體技術解法與決策細節 (How)
+1. **GitHub Actions 雲端建置自動化**：
+   - 採用 `ubuntu-latest` 執行環境，整合 `actions/checkout@v4`（遞迴拉取所有 Dolphin C++ 核心與第三方程式庫 submodule）。
+   - 設定 Temurin JDK 17 與 Gradle 快取，透過 Android SDK `sdkmanager` 自動配置 `ndk;26.1.10909125` 與 `cmake;3.22.1`。
+   - 執行 `./gradlew assembleRelease`，並將編譯產出的 APK 自動打包為 `dolphin-mmjr2-vbi-android-apk` Artifact 供下載。
+2. **Gradle 金鑰載入彈性化**：
+   - 加入 `if (keystorePropertiesFile.exists())` 保護判斷，避免因缺少檔案導致配置失敗。
+   - 在 release 建置型態中，若無獨立金鑰則自動採用 `signingConfigs.debug` 進行通用簽署，確保生成的 Release APK 能直接在任何 Android 設備上安裝使用。
+3. **本機 ADB 部署腳本**：
+   - 自動探索系統中的 `adb.exe`（相容 `C:\platform-tools` 與 SDK 預設目錄），自動識別已連線設備，支援更新安裝 (`-r -d`) 並提供一鍵啟動主介面功能。
+
+### 4. 測試驗證結果 (Verification)
+- 本機 Gradle 配置相容性檢查通過。
+- 語法與腳本路徑驗證無誤。
+
