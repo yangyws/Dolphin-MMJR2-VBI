@@ -23,12 +23,8 @@ public final class StartupHandler
 
   public static void HandleInit(FragmentActivity parent)
   {
-    if (!NativeLibrary.CheckIntegrity(parent.getPackageName(),
-              parent.getResources().getString(R.string.app_name)))
-    {
-      Object obj = null;
-      obj.toString();
-    }
+    // [MOD-20260920-30] 解除原版完整性檢查暗樁，防止自訂共存 Package ID 與繁中標籤觸發故意引發的 NPE 閃退
+
 
     // Ask the user to grant write permission if it's not already granted
     PermissionsHandler.checkWritePermission(parent);

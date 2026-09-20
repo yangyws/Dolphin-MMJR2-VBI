@@ -74,9 +74,6 @@
 namespace
 {
 constexpr char DOLPHIN_TAG[] = "DolphinEmuNative";
-constexpr char PACKAGE[] = "org.dolphinemu.mmjr";
-constexpr char PACKAGE_DEBUG[] = "org.dolphinemu.mmjr.debug";
-constexpr char LABEL[] = "Dolphin |MMJR2|";
 
 ANativeWindow* s_surf;
 
@@ -252,18 +249,10 @@ static std::string GetAnalyticValue(const std::string& key)
 extern "C" {
 
 JNIEXPORT jboolean JNICALL Java_org_dolphinemu_dolphinemu_NativeLibrary_CheckIntegrity(
-    JNIEnv* env, jclass, jstring package, jstring label)
+    JNIEnv*, jclass, jstring, jstring)
 {
-    const char* packageString = env->GetStringUTFChars(package, nullptr);
-    const char* labelString = env->GetStringUTFChars(label, nullptr);
-
-    bool r = (!strcmp(packageString, PACKAGE) || !strcmp(packageString, PACKAGE_DEBUG)) &&
-            !strcmp(labelString, LABEL);
-
-    env->ReleaseStringUTFChars(package, packageString);
-    env->ReleaseStringUTFChars(label, labelString);
-
-    return static_cast<jboolean>(r);
+    // [MOD-20260920-30] 解除原版完整性檢查限制，永遠回傳 true，支援掌機獨立共存版與在地化
+    return static_cast<jboolean>(true);
 }
 
 JNIEXPORT void JNICALL Java_org_dolphinemu_dolphinemu_NativeLibrary_UnPauseEmulation(JNIEnv*,

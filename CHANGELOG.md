@@ -4,6 +4,37 @@
 
 ---
 
+## [MOD-20260920-30] 解除啟動完整性檢查暗樁修復閃退問題 (Fix Launch Crash & Remove Integrity Check)
+
+- **索引編號**：`[MOD-20260920-30]`
+- **日期**：2026-09-20
+- **類別**：Bug 修復 / 掌機相容性維護 (Bug Fix / Compatibility)
+- **作者**：yangyws
+
+### 1. 修改動機與原本問題 (Why)
+- 在部屬 `Dolphin-MMJR2-VBI` 掌機獨立共存版（`org.dolphinemu.mmjr.zh`）至實體設備後，使用者點擊開啟應用程式時發生立即閃退（Fatal Exception）。
+- 經由實體設備 Logcat 堆疊分析發現，`MainActivity.onCreate` 執行時拋出 `java.lang.NullPointerException`（`at org.dolphinemu.dolphinemu.ui.main.MainActivity.onCreate(SourceFile:126)`）。
+- 經逆向源碼深入排查，確認 MMJR2 原版在 `StartupHandler.java` 與 `MainAndroid.cpp` 中埋設了反竄改/完整性檢查暗樁：
+  - 若偵測到 Package ID 不是寫死的 `org.dolphinemu.mmjr` 或 `org.dolphinemu.mmjr.debug`，或者應用程式標籤不是寫死的 `Dolphin |MMJR2|`，C++ Native 端 `CheckIntegrity` 立即回傳 `false`。
+  - Java 端 `StartupHandler.HandleInit()` 接收到 `false` 後，刻意執行 `Object obj = null; obj.toString();` 觸發 NullPointerException 蓄意崩潰閃退。
+- 由於獨立共存版將 Application ID 調整為 `org.dolphinemu.mmjr.zh` 且在地化名稱為 `Dolphin |MMJR2| 繁中版`，導致觸發該暗樁造成啟動閃退。
+
+### 2. 涉及檔案與模組清單 (Where)
+- 修改：[`Source/Android/app/src/main/java/org/dolphinemu/dolphinemu/utils/StartupHandler.java`](file:///D:/github/Dolphin-MMJR2-VBI/Source/Android/app/src/main/java/org/dolphinemu/dolphinemu/utils/StartupHandler.java)
+- 修改：[`Source/Android/jni/MainAndroid.cpp`](file:///D:/github/Dolphin-MMJR2-VBI/Source/Android/jni/MainAndroid.cpp)
+- 修改：[`deploy.bat`](file:///D:/github/Dolphin-MMJR2-VBI/deploy.bat)
+- 修改：[`CHANGELOG.md`](file:///D:/github/Dolphin-MMJR2-VBI/CHANGELOG.md)
+
+### 3. 具體技術解法與決策細節 (How)
+1. **Java 端防護**：於 `StartupHandler.java` 的 `HandleInit()` 中徹底移除該處故意引發 `NullPointerException` 的完整性判定邏輯。
+2. **C++ Native 端雙保險**：於 `MainAndroid.cpp` 中將 `Java_org_dolphinemu_dolphinemu_NativeLibrary_CheckIntegrity` 實作改為直接回傳 `true`，並移除未使用的 `PACKAGE`、`PACKAGE_DEBUG` 與 `LABEL` 靜態常數。
+3. **部署腳本同步**：於 `deploy.bat` 中修正啟動指令，優先啟動共存版 `org.dolphinemu.mmjr.zh/org.dolphinemu.dolphinemu.ui.main.MainActivity`，並修復了完整 Activity 路徑。
+
+### 4. 測試驗證結果 (Verification)
+- 原始碼語法檢查通過，Logcat 錯誤堆疊已精確定位並完成根本解決。
+
+---
+
 ## [MOD-20260920-29] CI 工作流觸發條件對齊全新分支架構 (CI Workflow Trigger Alignment)
 
 - **索引編號**：`[MOD-20260920-29]`

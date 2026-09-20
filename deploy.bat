@@ -87,9 +87,12 @@ if %errorlevel% equ 0 (
     set /p LAUNCH="請問是否要立即在掌機上啟動 Dolphin-MMJR2-VBI？(Y/N): "
     if /i "!LAUNCH!"=="Y" (
         echo [*] 正在啟動應用程式...
-        %ADB% -s %DEVICE_ID% shell am start -n org.dolphinemu.mmjr/org.dolphinemu.ui.main.MainActivity 2>nul
+        %ADB% -s %DEVICE_ID% shell am start -n org.dolphinemu.mmjr.zh/org.dolphinemu.dolphinemu.ui.main.MainActivity 2>nul
         if %errorlevel% neq 0 (
-            %ADB% -s %DEVICE_ID% shell am start -n org.dolphinemu.mmjr.debug/org.dolphinemu.ui.main.MainActivity 2>nul
+            %ADB% -s %DEVICE_ID% shell am start -n org.dolphinemu.mmjr/org.dolphinemu.dolphinemu.ui.main.MainActivity 2>nul
+        )
+        if %errorlevel% neq 0 (
+            %ADB% -s %DEVICE_ID% shell am start -n org.dolphinemu.mmjr.debug/org.dolphinemu.dolphinemu.ui.main.MainActivity 2>nul
         )
     )
 ) else (
