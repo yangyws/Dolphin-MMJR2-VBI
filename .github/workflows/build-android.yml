@@ -12,6 +12,9 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     name: Build Dolphin-MMJR2-VBI Android APK
@@ -50,6 +53,10 @@ jobs:
         run: |
           mkdir -p output_apks
           find Source/Android/app/build/outputs/apk -type f -name "*.apk" -exec cp {} output_apks/ \;
+          APK_FILE=$(find output_apks -name "*.apk" | head -n 1)
+          if [ -n "$APK_FILE" ]; then
+            cp "$APK_FILE" output_apks/Dolphin-MMJR2-VBI-zh.apk
+          fi
           ls -la output_apks/
 
       - name: Upload APK Artifact
@@ -58,3 +65,23 @@ jobs:
           name: dolphin-mmjr2-vbi-android-apk
           path: output_apks/*.apk
           retention-days: 14
+
+      - name: Publish GitHub Release
+        if: github.ref == 'refs/heads/main-zh'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v2407-zh
+          name: "Dolphin-MMJR2-VBI-zh 掌機繁體中文共存版"
+          body: |
+            ### 🐬 Dolphin-MMJR2-VBI-zh 掌機繁體中文共存版
+
+            - **底層核心**：Dolphin MMJR2 2407 + VBI Skip Hack（by Medard22）
+            - **掌機獨立包名**：`org.dolphinemu.mmjr.zh`（可與原版並存安裝，資料互不干擾）
+            - **完整在地化**：100% 台灣繁體中文前端介面與選單陣列支援
+            - **閃退暗樁解除**：移除自訂套件檢查反改代碼，相容各品牌 Android 掌機與設備
+          files: output_apks/Dolphin-MMJR2-VBI-zh.apk
+          draft: false
+          prerelease: false
+          make_latest: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

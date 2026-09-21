@@ -4,6 +4,30 @@
 
 ---
 
+## [MOD-20260921-07] 新增 GitHub Releases 自動發布機制與 APK 正名歸檔 (Add Automated GitHub Release Publishing)
+
+- **索引編號**：`[MOD-20260921-07]`
+- **日期**：2026-09-21
+- **類別**：CI/CD 部署管線增強 / 自動發布 (CI/CD / Release Automation)
+- **作者**：yangyws
+
+### 1. 修改動機與原本問題 (Why)
+- 原先工作流僅將 APK 上傳為 Actions 暫存產物（Artifacts），未在 GitHub 建立正式 Release，導致使用者於儲存庫首頁的 Releases 區塊看不到 APK 下載點，誤以為編譯未產出 APK。
+
+### 2. 涉及檔案與模組清單 (Where)
+- 修改：[`.github/workflows/build-android.yml`](file:///D:/github/Dolphin-MMJR2-VBI/.github/workflows/build-android.yml)
+- 修改：[`CHANGELOG.md`](file:///D:/github/Dolphin-MMJR2-VBI/CHANGELOG.md)
+
+### 3. 具體技術解法與決策細節 (How)
+1. 在工作流中宣告 `permissions: contents: write`，賦予 GitHub Actions 發布 Release 的權限。
+2. 在打包步驟中將產出的 APK 額外複製正名為 `Dolphin-MMJR2-VBI-zh.apk`。
+3. 整合 `softprops/action-gh-release@v2`，當 `main-zh` 建置成功時，自動發布標籤為 `v2407-zh` 的正式 Release，並將 APK 直接附加於 Release 資源中供直接下載。
+
+### 4. 測試驗證結果 (Verification)
+- YAML 結構與權限定義檢驗無誤，產物命名符合掌機規範。
+
+---
+
 ## [MOD-20260921-01] 掌機獨立共存版應用程式名稱正名為 Dolphin-MMJR2-VBI-zh (Rename App Name to Dolphin-MMJR2-VBI-zh)
 
 - **索引編號**：`[MOD-20260921-01]`
