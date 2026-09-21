@@ -33,7 +33,7 @@ if token:
     headers["Authorization"] = f"token {token}"
 ctx = ssl.create_default_context()
 
-repo = "yangyws/Dolphin-MMJR2-VBI"
+repo = "yangyws/Dolphin-MMJR2-VBI-zh"
 branch = "main-zh"
 
 print("==========================================================")
