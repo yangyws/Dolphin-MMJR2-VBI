@@ -4,6 +4,34 @@
 
 ---
 
+## [MOD-20260922-02] 支援雙規格產出：獨立共存版與原版取代版自動建置與 Release 發布 (Dual Flavor Build: Coexistence & Replacement)
+
+- **索引編號**：`[MOD-20260922-02]`
+- **日期**：2026-09-22
+- **類別**：建置架構增強 / 多規格發布 (Build Variants & Release Automation)
+- **作者**：yangyws
+
+### 1. 修改動機與原本問題 (Why)
+- 掌機玩家與前端啟動器（如 Daijishō、Pegasus、ES-DE）預設 Player 腳本多綁定原廠官方套件名稱（`org.dolphinemu.mmjr`）。原先僅產出共存版（`org.dolphinemu.mmjr.zh`），導致前端在未手動修改設定時無法自動識別或喚醒模擬器。
+- 為兼顧「想與原版共存測試」以及「想直接覆蓋原版供前端無縫隨開即用」之雙重需求，必須同時產出兩種規格安裝包。
+
+### 2. 涉及檔案與模組清單 (Where)
+- 修改：[`Source/Android/app/build.gradle`](file:///D:/github/Dolphin-MMJR2-VBI/Source/Android/app/build.gradle)
+- 修改：[`.github/workflows/build-android.yml`](file:///D:/github/Dolphin-MMJR2-VBI/.github/workflows/build-android.yml)
+- 修改：[`CHANGELOG.md`](file:///D:/github/Dolphin-MMJR2-VBI/CHANGELOG.md)
+
+### 3. 具體技術解法與決策細節 (How)
+1. 在 `build.gradle` 的 `defaultConfig` 中將 `applicationId` 改為動態取得：`project.findProperty("customAppId") ?: "org.dolphinemu.mmjr.zh"`。
+2. 調整 GitHub Actions 建置工作流，在同一編譯流程中分別注入自訂 ID 連續建置並打包：
+   - 產出 `Dolphin-MMJR2-VBI-coexist-zh.apk`（套件名：`org.dolphinemu.mmjr.zh`）
+   - 產出 `Dolphin-MMJR2-VBI-replace-zh.apk`（套件名：`org.dolphinemu.mmjr`）
+3. 更新 GitHub Release 內容說明與上傳資產，雙版本副檔名前皆嚴格遵循小寫 `-zh.apk` 統一標準。
+
+### 4. 測試驗證結果 (Verification)
+- Gradle 語法與工作流配置正確，資產命名與版本規格完全符合規範。
+
+---
+
 ## [MOD-20260921-07] 新增 GitHub Releases 自動發布機制與 APK 正名歸檔 (Add Automated GitHub Release Publishing)
 
 - **索引編號**：`[MOD-20260921-07]`
